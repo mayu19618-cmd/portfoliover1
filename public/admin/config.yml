@@ -3,13 +3,8 @@
 # =========================================================
 
 backend:
-  name: github
-  repo: mayu19618-cmd/portfoliover1
-  branch: main
-  base_url: https://decap-turbo.app
-  auth_endpoint: auth
-  # ↑ Decap Turbo でサイトを作成すると認証が使えるようになります
-  # Site ID は Decap Turbo の管理画面（https://decap-turbo.app）で確認してください
+  name: turbo-github
+  turbo_site_id: 678d80da-014b-4b5e-9bb8-73e272c4a546
 
 # 画像の保存場所（リポジトリ内のパス）
 media_folder: "public/images/works"
