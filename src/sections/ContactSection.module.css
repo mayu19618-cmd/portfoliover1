@@ -1,0 +1,183 @@
+.section {
+  padding: 100px 0 0;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--pink-light) 100%);
+}
+
+.inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 48px;
+}
+
+.sectionNo {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: #D782A0;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+
+.sub {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+}
+
+.contactBox {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.contactText {
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: var(--text-light);
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnPrimary {
+  display: inline-block;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #F4B8CE, #D782A0);
+  color: white;
+  border-radius: 100px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 16px rgba(215, 130, 160, 0.4);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(215, 130, 160, 0.5);
+}
+
+.btnSecondary {
+  display: inline-block;
+  padding: 13px 28px;
+  border: 1.5px solid #F4B8CE;
+  color: #D782A0;
+  border-radius: 100px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btnSecondary:hover {
+  background: #FCE4EC;
+}
+
+.sns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.snsLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: #D782A0;
+  font-weight: 500;
+}
+
+.snsLinks {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.snsBtn {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 100px;
+  border: 1.5px solid #F4B8CE;
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+.snsBtn:hover {
+  background: #F4B8CE;
+  color: white;
+  border-color: #F4B8CE;
+}
+
+.farewellRabbit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.farewellText {
+  font-size: 0.85rem;
+  color: #D782A0;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.footer {
+  background: white;
+  border-top: 1px solid rgba(244, 184, 206, 0.3);
+  padding: 24px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer p {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+}
+
+.footerNote {
+  font-size: 0.65rem !important;
+  color: #bbb !important;
+}
+
+@media (max-width: 768px) {
+  .section { padding-top: 72px; }
+  .inner { padding: 0 20px 60px; }
+  .contactBox { padding: 32px 24px; }
+  .buttons { flex-direction: column; align-items: center; }
+  .btnPrimary, .btnSecondary { width: 100%; text-align: center; }
+}

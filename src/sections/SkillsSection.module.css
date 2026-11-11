@@ -1,0 +1,118 @@
+.section {
+  padding: 100px 0;
+  background: var(--bg);
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.sectionNo {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: #D782A0;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+
+.sub {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+}
+
+.note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-bottom: 48px;
+}
+
+.groups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.group {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.groupHeader {
+  padding: 24px 28px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.groupIcon {
+  font-size: 1.5rem;
+}
+
+.groupTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.skillList {
+  list-style: none;
+  padding: 16px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.skillName {
+  font-size: 0.88rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.levelBadge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 100px;
+  border: 1px solid;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .groups { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 72px 0; }
+  .inner { padding: 0 20px; }
+  .groups { grid-template-columns: 1fr; }
+}

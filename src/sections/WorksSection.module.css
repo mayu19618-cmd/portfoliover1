@@ -1,0 +1,231 @@
+.section {
+  padding: 100px 0;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sectionNo {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: #D782A0;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+
+.sub {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.filterBtn {
+  padding: 8px 20px;
+  border-radius: 100px;
+  border: 1.5px solid #F4B8CE;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-family: inherit;
+}
+
+.filterBtn:hover,
+.filterBtn.active {
+  background: #F4B8CE;
+  border-color: #F4B8CE;
+  color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.card {
+  cursor: pointer;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
+  outline: none;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+
+.card:focus-visible {
+  outline: 2px solid #D782A0;
+  outline-offset: 3px;
+}
+
+.card.surprised {
+  animation: surprised 0.4s ease-out forwards;
+}
+
+@keyframes surprised {
+  0% { transform: scale(1) translateY(0); }
+  30% { transform: scale(1.04) translateY(-8px); }
+  60% { transform: scale(0.97) translateY(2px); }
+  80% { transform: scale(1.01) translateY(-3px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+.imgWrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+.card:hover .img {
+  transform: scale(1.07);
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .placeholder {
+  transform: scale(1.07);
+}
+
+.placeholderIcon {
+  font-size: 2.5rem;
+}
+
+.placeholderLabel {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #51454A;
+  letter-spacing: 0.08em;
+}
+
+.placeholderNote {
+  font-size: 0.65rem;
+  color: #8a7a80;
+  margin-top: 4px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(215, 130, 160, 0.82);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover .overlay,
+.card:focus-visible .overlay {
+  opacity: 1;
+}
+
+.overlayTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.overlayBtn {
+  font-size: 0.75rem;
+  color: white;
+  letter-spacing: 0.15em;
+  border: 1px solid rgba(255,255,255,0.7);
+  padding: 6px 16px;
+  border-radius: 100px;
+}
+
+.cardBody {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.category {
+  font-size: 0.7rem;
+  color: #D782A0;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.cardTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.year {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .section { padding: 72px 0; }
+  .inner { padding: 0 20px; }
+  .grid { grid-template-columns: 1fr; gap: 24px; }
+  .filterRow { gap: 8px; }
+  .filterBtn { padding: 6px 16px; font-size: 0.75rem; }
+}

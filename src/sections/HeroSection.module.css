@@ -1,0 +1,126 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(160deg, #FFF9FB 0%, #FCE4EC 50%, #FFF0F5 100%);
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgDeco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.circle1 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(244, 184, 206, 0.18);
+  top: -120px;
+  right: -100px;
+}
+
+.circle2 {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(252, 228, 236, 0.4);
+  bottom: -80px;
+  left: -80px;
+}
+
+.circle3 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(215, 130, 160, 0.08);
+  top: 30%;
+  left: 10%;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 100px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.rabbitHero {
+  margin-bottom: 8px;
+}
+
+.subEn {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #D782A0;
+  font-weight: 500;
+}
+
+.mainTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #51454A;
+  line-height: 1;
+  margin: 4px 0;
+}
+
+.subJa {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: #8a7a80;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+.scrollDown {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.scrollText {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: #D782A0;
+  font-weight: 500;
+}
+
+.scrollLine {
+  width: 1.5px;
+  height: 40px;
+  background: linear-gradient(to bottom, #D782A0, transparent);
+  transform-origin: top;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 100px 16px 80px;
+    gap: 10px;
+  }
+}

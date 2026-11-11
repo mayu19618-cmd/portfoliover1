@@ -1,0 +1,19 @@
+.cursorWrapper {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9000;
+  transform: translate(-50%, -100%);
+  left: -600px;
+  top: -600px;
+}
+
+.mobileWrapper {
+  position: fixed;
+  z-index: 8000;
+  pointer-events: none;
+  transform: translate(-50%, -100%);
+  left: -600px;
+  top: -600px;
+  user-select: none;
+  touch-action: none;
+}

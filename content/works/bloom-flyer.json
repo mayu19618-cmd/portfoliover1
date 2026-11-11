@@ -1,0 +1,23 @@
+{
+  "title": "bloom — フラワーショップフライヤー",
+  "category": "Graphic Design",
+  "year": 2024,
+  "order": 3,
+  "published": true,
+  "thumbnail": "",
+  "thumbnailAlt": "架空のフラワーショップのフライヤーデザイン",
+  "color": "#F3E5F5",
+  "duration": "",
+  "siteUrl": "",
+  "overview": "架空のフラワーショップの春季イベント告知フライヤー（A4両面）。",
+  "purpose": "春の新作コレクション発表と、ワークショップへの集客。",
+  "target": "花が好きな20〜50代の女性",
+  "concept": "余白を大切にしたミニマルなレイアウトに、ボタニカルなイラストを添えた上品な仕上がり。",
+  "tools": ["Adobe Illustrator", "Adobe Photoshop"],
+  "highlights": [
+    "ボタニカルイラストをゼロから手描きしベクターで仕上げ",
+    "印刷・SNS両方に対応したサイズ展開",
+    "日本語と英語を美しく共存させた組版設計"
+  ],
+  "images": []
+}

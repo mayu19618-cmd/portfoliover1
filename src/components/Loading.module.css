@@ -1,0 +1,67 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #FFF9FB 0%, #FCE4EC 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  z-index: 9999;
+}
+
+.bgDeco {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bgCircle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(244, 184, 206, 0.2);
+  animation: float 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.6s);
+}
+
+.bgCircle:nth-child(1) { width: 200px; height: 200px; top: -60px; left: -60px; }
+.bgCircle:nth-child(2) { width: 160px; height: 160px; top: 20%; right: -40px; }
+.bgCircle:nth-child(3) { width: 120px; height: 120px; bottom: 10%; left: 10%; }
+.bgCircle:nth-child(4) { width: 80px; height: 80px; top: 40%; left: 5%; }
+.bgCircle:nth-child(5) { width: 100px; height: 100px; bottom: 20%; right: 15%; }
+.bgCircle:nth-child(6) { width: 60px; height: 60px; top: 15%; left: 40%; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.rabbit {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 8px 20px rgba(215, 130, 160, 0.3));
+}
+
+.text {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.loading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #D782A0;
+  letter-spacing: 0.15em;
+}
+
+.dots {
+  display: flex;
+  gap: 3px;
+  font-size: 1.2rem;
+  color: #D782A0;
+}

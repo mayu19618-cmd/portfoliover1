@@ -1,0 +1,164 @@
+# =========================================================
+# Decap CMS 設定ファイル — mayu. portfolio
+# =========================================================
+
+backend:
+  name: github
+  repo: mayu19618-cmd/portfoliover1
+  branch: main
+  base_url: https://decap-turbo.app
+  auth_endpoint: auth
+  # ↑ Decap Turbo でサイトを作成すると認証が使えるようになります
+  # Site ID は Decap Turbo の管理画面（https://decap-turbo.app）で確認してください
+
+# 画像の保存場所（リポジトリ内のパス）
+media_folder: "public/images/works"
+# コンテンツファイルに書き込まれるパス
+public_folder: "/images/works"
+
+# サイトURL（プレビューリンクに使用）
+site_url: https://mayu19618-cmd.github.io/portfoliover1
+
+# 日本語設定
+locale: ja
+
+# =========================================================
+# 作品コレクション
+# =========================================================
+collections:
+  - name: works
+    label: "作品"
+    label_singular: "作品1件"
+    folder: content/works
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    format: json
+    identifier_field: title
+    summary: "{{order}}. {{title}} — {{category}} ({{year}})"
+    sortable_fields:
+      - order
+      - title
+      - year
+    view_groups:
+      - label: カテゴリー
+        field: category
+      - label: 公開状態
+        field: published
+
+    fields:
+      # ── 公開設定 ──────────────────────────────────
+      - label: "公開状態"
+        name: published
+        widget: boolean
+        default: true
+        hint: "ONにすると一覧ページに表示されます。OFFで非公開（下書き）になります。"
+
+      - label: "表示順序"
+        name: order
+        widget: number
+        default: 999
+        value_type: int
+        min: 1
+        max: 999
+        hint: "数字が小さいほど先に表示されます（1が最初）"
+
+      # ── 基本情報 ──────────────────────────────────
+      - label: "作品名"
+        name: title
+        widget: string
+        hint: "例：Sakura Café ブランディング"
+
+      - label: "カテゴリー"
+        name: category
+        widget: select
+        options:
+          - { label: "Web Design（HP・LP）", value: "Web Design" }
+          - { label: "Graphic Design（バナー・サムネイル）", value: "Graphic Design" }
+          - { label: "Branding（ロゴ・ブランドデザイン）", value: "Branding" }
+          - { label: "Other Works", value: "Other Works" }
+
+      - label: "制作年"
+        name: year
+        widget: number
+        default: 2024
+        value_type: int
+        min: 2000
+        max: 2099
+
+      - label: "制作期間"
+        name: duration
+        widget: string
+        required: false
+        hint: "例：2024年3月〜4月（約2ヶ月）"
+
+      # ── 画像 ──────────────────────────────────────
+      - label: "サムネイル画像"
+        name: thumbnail
+        widget: image
+        required: false
+        hint: "WORKS一覧に表示されるメイン画像（推奨：横長 1200×800px 以上）"
+
+      - label: "サムネイル画像の説明文"
+        name: thumbnailAlt
+        widget: string
+        hint: "スクリーンリーダー用のalt テキスト（例：○○のWebサイトデザイン）"
+
+      - label: "背景カラー（画像なしの場合）"
+        name: color
+        widget: color
+        default: "#FCE4EC"
+        hint: "サムネイル画像がない場合に表示される背景色"
+
+      - label: "詳細画像（複数可）"
+        name: images
+        widget: list
+        required: false
+        hint: "作品詳細ページに表示する画像を追加してください"
+        fields:
+          - label: "画像"
+            name: url
+            widget: image
+          - label: "画像の説明文（alt）"
+            name: alt
+            widget: string
+            hint: "例：ロゴデザインのカラーバリエーション"
+
+      # ── 作品説明 ──────────────────────────────────
+      - label: "制作概要"
+        name: overview
+        widget: text
+        hint: "この作品の概要を2〜3文で説明してください"
+
+      - label: "制作目的"
+        name: purpose
+        widget: text
+        hint: "なぜこのデザインを制作したか（クライアントのゴール・課題）"
+
+      - label: "ターゲット"
+        name: target
+        widget: string
+        hint: "例：20〜30代の女性、カフェ巡りが好きなライフスタイル層"
+
+      - label: "デザインコンセプト"
+        name: concept
+        widget: text
+        hint: "デザインの方向性・世界観・こだわりを説明してください"
+
+      # ── ツール・ポイント ──────────────────────────
+      - label: "使用ツール"
+        name: tools
+        widget: list
+        hint: "使用したツールをひとつずつ入力してください（例：Figma、Adobe Illustrator）"
+
+      - label: "工夫したポイント"
+        name: highlights
+        widget: list
+        hint: "制作で工夫した点・こだわりを箇条書きで入力してください"
+
+      # ── リンク ───────────────────────────────────
+      - label: "公開サイトURL"
+        name: siteUrl
+        widget: string
+        required: false
+        hint: "サイトを公開している場合はURLを入力（例：https://example.com）"

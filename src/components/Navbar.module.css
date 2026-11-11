@@ -1,0 +1,129 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.scrolled {
+  background: rgba(255, 249, 251, 0.92);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(215, 130, 160, 0.1);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #D782A0;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s;
+}
+
+.logo:hover {
+  opacity: 0.75;
+}
+
+.nav {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+
+.navLink {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: #51454A;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: #D782A0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navLink:hover {
+  color: #D782A0;
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+.menuBtn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #51454A;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.barOpen1 { transform: translateY(7px) rotate(45deg); }
+.barOpen2 { opacity: 0; }
+.barOpen3 { transform: translateY(-7px) rotate(-45deg); }
+
+.mobileNav {
+  background: rgba(255, 249, 251, 0.98);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0 32px;
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 16px 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: #51454A;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(244, 184, 206, 0.3);
+  transition: color 0.2s;
+}
+
+.mobileNavLink:hover {
+  color: #D782A0;
+}
+
+@media (max-width: 768px) {
+  .nav { display: none; }
+  .menuBtn { display: flex; }
+  .inner { padding: 0 20px; }
+}

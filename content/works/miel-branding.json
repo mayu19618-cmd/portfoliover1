@@ -1,0 +1,23 @@
+{
+  "title": "miel — ハチミツブランド",
+  "category": "Branding",
+  "year": 2024,
+  "order": 2,
+  "published": true,
+  "thumbnail": "",
+  "thumbnailAlt": "架空のハチミツブランドのブランディングデザイン",
+  "color": "#FFF3E0",
+  "duration": "",
+  "siteUrl": "",
+  "overview": "架空のオーガニックハチミツブランドのVI（ビジュアルアイデンティティ）制作。",
+  "purpose": "自然派・高品質なブランドイメージを構築し、差別化を図る。",
+  "target": "健康意識の高い30〜40代の女性",
+  "concept": "蜂の巣の六角形モチーフと、ゴールドとクリームの落ち着いた配色で自然の豊かさを表現。",
+  "tools": ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
+  "highlights": [
+    "ロゴ、パッケージ、ショップカード、Webバナーまでトータルでブランディングを統一",
+    "六角形グリッドシステムを用いたデザイン展開",
+    "ゴールド箔風の質感をDTP・Web両方に応用"
+  ],
+  "images": []
+}

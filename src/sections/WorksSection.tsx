@@ -1,0 +1,125 @@
+import { useState, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { works, categories, type WorkCategory } from '../data/works';
+import styles from './WorksSection.module.css';
+interface WorksSectionProps {
+  onCarrotDrop: (drop: boolean) => void;
+}
+
+export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
+  const [activeCategory, setActiveCategory] = useState<WorkCategory | 'All'>('All');
+  const [animatingId, setAnimatingId] = useState<string | null>(null);
+  const navigate = useNavigate();
+  const shouldReduce = useReducedMotion();
+
+  const filtered = activeCategory === 'All'
+    ? works
+    : works.filter((w) => w.category === activeCategory);
+
+  const handleCardClick = useCallback((id: string) => {
+    if (shouldReduce) {
+      navigate(`/works/${id}`);
+      return;
+    }
+    if (animatingId) return;
+
+    setAnimatingId(id);
+    onCarrotDrop(true);
+    window.dispatchEvent(new CustomEvent('rabbit-surprised'));
+
+    setTimeout(() => {
+      setAnimatingId(null);
+      onCarrotDrop(false);
+      navigate(`/works/${id}`);
+    }, 1400);
+  }, [animatingId, navigate, onCarrotDrop, shouldReduce]);
+
+  return (
+    <section id="works" className={styles.section} aria-label="作品一覧">
+      <div className={styles.inner}>
+        <motion.div
+          className={styles.heading}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <span className={styles.sectionNo}>02</span>
+          <h2 className={styles.title}>Selected Works</h2>
+          <p className={styles.sub}>ひとつひとつ、想いを込めて。</p>
+        </motion.div>
+
+        {/* カテゴリフィルター */}
+        <div className={styles.filterRow} role="group" aria-label="カテゴリフィルター">
+          {(['All', ...categories] as const).map((cat) => (
+            <button
+              key={cat}
+              className={`${styles.filterBtn} ${activeCategory === cat ? styles.active : ''}`}
+              onClick={() => setActiveCategory(cat)}
+              aria-pressed={activeCategory === cat}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* 作品グリッド */}
+        <motion.div className={styles.grid} layout>
+          <AnimatePresence mode="popLayout">
+            {filtered.map((work, i) => (
+              <motion.article
+                key={work.id}
+                className={`${styles.card} ${animatingId === work.id ? styles.surprised : ''}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                layout
+                onClick={() => handleCardClick(work.id)}
+                tabIndex={0}
+                role="button"
+                aria-label={`${work.title}の詳細を見る`}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleCardClick(work.id);
+                  }
+                }}
+              >
+                <div className={styles.imgWrapper}>
+                  {work.thumbnail ? (
+                    <img src={work.thumbnail} alt={work.thumbnailAlt} className={styles.img} loading="lazy" />
+                  ) : (
+                    <WorkPlaceholder color={work.color} title={work.title} category={work.category} />
+                  )}
+                  <div className={styles.overlay}>
+                    <span className={styles.overlayTitle}>{work.title}</span>
+                    <span className={styles.overlayBtn}>View Work →</span>
+                  </div>
+                </div>
+                <div className={styles.cardBody}>
+                  <span className={styles.category}>{work.category}</span>
+                  <h3 className={styles.cardTitle}>{work.title}</h3>
+                  <span className={styles.year}>{work.year}</span>
+                </div>
+              </motion.article>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function WorkPlaceholder({ color, title, category }: { color: string; title: string; category: string }) {
+  return (
+    <div className={styles.placeholder} style={{ background: color }} aria-label={`${title}のプレースホルダー画像`}>
+      <span className={styles.placeholderIcon}>
+        {category === 'Web Design' ? '🌐' : category === 'Graphic Design' ? '🎨' : category === 'Branding' ? '✨' : '📌'}
+      </span>
+      <span className={styles.placeholderLabel}>{category}</span>
+      <span className={styles.placeholderNote}>※ 架空の制作実績</span>
+    </div>
+  );
+}
