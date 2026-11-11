@@ -1,6 +1,6 @@
 /* ===================================================
    Decap CMS カスタムスタイル — mayu. portfolio
-   ピンク × 白のデザインシステムに合わせたテーマ
+   白ベース × ブルーグレーアクセントのエディトリアルテーマ
 =================================================== */
 
 /* フォント */
@@ -14,69 +14,79 @@ body,
 
 /* ── ヘッダー ── */
 [class*="AppHeader"] {
-  background: linear-gradient(135deg, #FFF0F5 0%, #FCE4EC 100%) !important;
-  border-bottom: 1px solid #F4B8CE !important;
-  box-shadow: 0 2px 12px rgba(215, 130, 160, 0.1) !important;
+  background: #FFFFFF !important;
+  border-bottom: 1px solid #E2E8ED !important;
+  box-shadow: none !important;
 }
 
 [class*="AppHeader"] h1,
 [class*="AppHeader"] a {
-  color: #D782A0 !important;
+  color: #1C1C1E !important;
   font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
 }
 
 /* ── サイドバー ── */
 [class*="Sidebar"],
 nav[class*="Collection"] {
-  background: #FFF9FB !important;
-  border-right: 1px solid rgba(244, 184, 206, 0.4) !important;
+  background: #F4F6F8 !important;
+  border-right: 1px solid #E2E8ED !important;
 }
 
 /* ── プライマリボタン（公開・保存） ── */
 button[class*="primary"],
 [class*="PublishButton"] button,
 button[class*="Publish"] {
-  background: linear-gradient(135deg, #D782A0, #E899B8) !important;
-  border-color: #D782A0 !important;
-  border-radius: 100px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.05em !important;
+  background: #1C1C1E !important;
+  border-color: #1C1C1E !important;
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
   transition: all 0.2s ease !important;
-  box-shadow: 0 4px 14px rgba(215, 130, 160, 0.3) !important;
+  box-shadow: none !important;
 }
 
 button[class*="primary"]:hover,
 [class*="PublishButton"] button:hover {
-  opacity: 0.88 !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 6px 18px rgba(215, 130, 160, 0.4) !important;
+  opacity: 0.75 !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 /* ── セカンダリボタン ── */
 button[class*="secondary"],
 button[class*="cancel"] {
-  border-color: #F4B8CE !important;
-  color: #D782A0 !important;
-  border-radius: 100px !important;
+  border-color: #E2E8ED !important;
+  color: #6B7685 !important;
+  border-radius: 4px !important;
+}
+
+button[class*="secondary"]:hover,
+button[class*="cancel"]:hover {
+  border-color: #E8A0B4 !important;
+  color: #1C1C1E !important;
 }
 
 /* ── フォーム入力欄 ── */
 input[type="text"],
 input[type="number"],
 input[type="url"],
+input[type="email"],
 textarea,
 select {
-  border-color: rgba(244, 184, 206, 0.6) !important;
-  border-radius: 10px !important;
+  border-color: #E2E8ED !important;
+  border-radius: 6px !important;
   transition: border-color 0.2s, box-shadow 0.2s !important;
+  background: #FFFFFF !important;
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="url"]:focus,
+input[type="email"]:focus,
 textarea:focus {
-  border-color: #D782A0 !important;
-  box-shadow: 0 0 0 3px rgba(215, 130, 160, 0.15) !important;
+  border-color: #E8A0B4 !important;
+  box-shadow: 0 0 0 3px rgba(232, 160, 180, 0.15) !important;
   outline: none !important;
 }
 
@@ -84,66 +94,103 @@ textarea:focus {
 [class*="toggle"][class*="active"],
 input[type="checkbox"]:checked + [class*="slider"],
 [class*="Switch"][class*="checked"] {
-  background: #D782A0 !important;
+  background: #E8A0B4 !important;
 }
 
 /* ── カード（作品一覧） ── */
 [class*="Card"] {
-  border-radius: 16px !important;
-  border: 1px solid rgba(244, 184, 206, 0.3) !important;
-  box-shadow: 0 4px 20px rgba(215, 130, 160, 0.08) !important;
-  transition: all 0.25s ease !important;
+  border-radius: 8px !important;
+  border: 1px solid #E2E8ED !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.2s ease !important;
 }
 
 [class*="Card"]:hover {
-  box-shadow: 0 8px 28px rgba(215, 130, 160, 0.18) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09) !important;
   transform: translateY(-2px) !important;
 }
 
 /* ── ラベル（フィールド名） ── */
 label,
 [class*="ControlLabel"] {
-  color: #D782A0 !important;
+  color: #6B7685 !important;
   font-weight: 600 !important;
-  font-size: 0.75rem !important;
-  letter-spacing: 0.1em !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
 }
 
 /* ── ヒントテキスト ── */
 [class*="hint"],
 [class*="Hint"] {
-  color: #8a7a80 !important;
+  color: #8FA3B1 !important;
   font-size: 0.78rem !important;
 }
 
-/* ── カテゴリーリスト ── */
+/* ── アクティブなナビ項目 ── */
 [class*="CollectionItem"][class*="active"],
 [class*="SidebarNavLink"][class*="active"] {
-  background: rgba(244, 184, 206, 0.2) !important;
-  border-left: 3px solid #D782A0 !important;
-  color: #D782A0 !important;
+  background: rgba(232, 160, 180, 0.12) !important;
+  border-left: 2px solid #E8A0B4 !important;
+  color: #1C1C1E !important;
 }
 
 /* ── トースト通知 ── */
 [class*="Toast"],
 [class*="notification"] {
-  border-radius: 12px !important;
+  border-radius: 6px !important;
 }
 
 /* ── ページタイトル ── */
 [class*="CollectionHeader"] h1,
 [class*="ViewHeader"] h1 {
-  color: #51454A !important;
+  color: #1C1C1E !important;
   font-weight: 700 !important;
+  letter-spacing: 0.03em !important;
 }
 
 /* ── 新規作成ボタン ── */
 [class*="NewButton"],
 a[class*="newEntryButton"] {
-  background: linear-gradient(135deg, #D782A0, #E899B8) !important;
-  border-radius: 100px !important;
+  background: #1C1C1E !important;
+  border-radius: 4px !important;
   color: white !important;
-  font-weight: 600 !important;
-  box-shadow: 0 4px 14px rgba(215, 130, 160, 0.3) !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  letter-spacing: 0.08em !important;
+}
+
+[class*="NewButton"]:hover,
+a[class*="newEntryButton"]:hover {
+  opacity: 0.75 !important;
+}
+
+/* ── セクションの区切り線 ── */
+[class*="Divider"],
+hr {
+  border-color: #E2E8ED !important;
+}
+
+/* ── カラーピッカー ── */
+[class*="ColorControl"] input {
+  border-radius: 6px !important;
+}
+
+/* ── 画像アップロードエリア ── */
+[class*="FileControl"],
+[class*="ImageControl"] {
+  border: 2px dashed #E2E8ED !important;
+  border-radius: 8px !important;
+  transition: border-color 0.2s !important;
+}
+
+[class*="FileControl"]:hover,
+[class*="ImageControl"]:hover {
+  border-color: #E8A0B4 !important;
+}
+
+/* ── ドット（リストの追加ボタン等） ── */
+button[class*="add"],
+[class*="ListItemRemove"] {
+  color: #E8A0B4 !important;
 }
