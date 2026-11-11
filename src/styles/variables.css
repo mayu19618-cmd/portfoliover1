@@ -1,7 +1,7 @@
 :root {
   /* Backgrounds */
-  --bg: #FFFFFF;
-  --bg-sub: #F4F6F8;
+  --bg: #FFF9FB;
+  --bg-sub: #FFF0F5;
   --white: #FFFFFF;
 
   /* Accent */
@@ -14,8 +14,8 @@
   --deco: #C8D5DC;
 
   /* Text */
-  --text: #1C1C1E;
-  --text-light: #6B7685;
+  --text: #51454A;
+  --text-light: #8a7a80;
 
   /* Border */
   --border: #E2E8ED;

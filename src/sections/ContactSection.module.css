@@ -1,12 +1,43 @@
 .section {
   padding: 120px 0 0;
   background: var(--bg-sub);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── 水玉装飾 ── */
+.bgDeco {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgCircle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(244, 184, 206, 0.22);
+  animation: float 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.6s);
+}
+
+.bgCircle:nth-child(1) { width: 200px; height: 200px; top: -60px;   right: -50px; }
+.bgCircle:nth-child(2) { width: 130px; height: 130px; bottom: 10%;  left: -40px; }
+.bgCircle:nth-child(3) { width: 90px;  height: 90px;  top: 30%;     right: 10%; }
+.bgCircle:nth-child(4) { width: 60px;  height: 60px;  top: 15%;     left: 40%; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
 }
 
 .inner {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 clamp(20px, 5vw, 60px) 80px;
+  position: relative;
+  z-index: 1;
 }
 
 .heading {
@@ -23,14 +54,14 @@
 .sectionNo {
   font-size: 0.68rem;
   letter-spacing: 0.3em;
-  color: var(--accent);
+  color: #D782A0;
   font-weight: 500;
 }
 
 .headerLine {
   width: 48px;
   height: 1px;
-  background: var(--accent);
+  background: #D782A0;
   flex-shrink: 0;
 }
 
@@ -56,7 +87,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--accent);
+  background: #D782A0;
 }
 
 .sub {
@@ -90,18 +121,20 @@
 .btnPrimary {
   display: inline-block;
   padding: 13px 32px;
-  background: var(--text);
+  background: linear-gradient(135deg, #D782A0, #E899B8);
   color: white;
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.15em;
   text-decoration: none;
-  transition: background var(--transition), transform 0.2s;
+  transition: opacity 0.25s, transform 0.2s;
   font-family: inherit;
+  border-radius: 100px;
+  box-shadow: 0 4px 16px rgba(215, 130, 160, 0.35);
 }
 
 .btnPrimary:hover {
-  background: #333;
+  opacity: 0.85;
   transform: translateY(-1px);
 }
 
@@ -110,15 +143,15 @@
   font-size: 0.84rem;
   color: var(--text-light);
   text-decoration: none;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(244, 184, 206, 0.6);
   padding-bottom: 2px;
-  transition: color var(--transition), border-color var(--transition);
+  transition: color 0.25s, border-color 0.25s;
   letter-spacing: 0.03em;
 }
 
 .btnEmail:hover {
-  color: var(--text);
-  border-color: var(--accent);
+  color: #D782A0;
+  border-color: #D782A0;
 }
 
 .sns {
@@ -130,7 +163,7 @@
 .snsLabel {
   font-size: 0.68rem;
   letter-spacing: 0.25em;
-  color: var(--blue-gray);
+  color: #D782A0;
   font-weight: 500;
   flex-shrink: 0;
 }
@@ -144,18 +177,20 @@
 .snsBtn {
   display: inline-block;
   padding: 7px 16px;
-  border: 1px solid var(--border);
+  border: 1.5px solid rgba(244, 184, 206, 0.6);
   color: var(--text-light);
   font-size: 0.75rem;
   font-weight: 500;
   text-decoration: none;
-  transition: border-color var(--transition), color var(--transition);
+  transition: border-color 0.25s, color 0.25s, background 0.25s;
   letter-spacing: 0.05em;
+  border-radius: 100px;
 }
 
 .snsBtn:hover {
-  border-color: var(--accent);
-  color: var(--text);
+  border-color: #D782A0;
+  color: #D782A0;
+  background: rgba(244, 184, 206, 0.1);
 }
 
 .farewellRabbit {
@@ -168,19 +203,21 @@
 
 .farewellText {
   font-size: 0.82rem;
-  color: var(--accent);
+  color: #D782A0;
   font-weight: 500;
   letter-spacing: 0.1em;
   margin-left: 4px;
 }
 
 .footer {
-  background: white;
-  border-top: 1px solid var(--border);
+  background: rgba(255, 249, 251, 0.8);
+  border-top: 1px solid rgba(244, 184, 206, 0.3);
   padding: 24px clamp(20px, 5vw, 60px);
   display: flex;
   flex-direction: column;
   gap: 6px;
+  position: relative;
+  z-index: 1;
 }
 
 .footer p {

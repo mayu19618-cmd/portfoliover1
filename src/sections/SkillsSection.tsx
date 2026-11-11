@@ -17,6 +17,12 @@ export default function SkillsSection() {
 
   return (
     <section id="skills" className={styles.section} aria-label="スキル一覧">
+      <div className={styles.bgDeco} aria-hidden="true">
+        {[...Array(4)].map((_, i) => (
+          <div key={i} className={styles.bgCircle} style={{ '--i': i } as React.CSSProperties} />
+        ))}
+      </div>
+
       <div className={styles.inner}>
         <motion.div
           className={styles.heading}

@@ -8,9 +8,9 @@
 }
 
 .scrolled {
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 249, 251, 0.94);
   backdrop-filter: blur(16px);
-  box-shadow: 0 1px 0 var(--border);
+  box-shadow: 0 2px 20px rgba(215, 130, 160, 0.1);
 }
 
 .inner {

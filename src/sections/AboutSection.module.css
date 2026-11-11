@@ -1,12 +1,44 @@
 .section {
   padding: 120px 0;
   background: var(--bg-sub);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── 水玉装飾 ── */
+.bgDeco {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgCircle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(244, 184, 206, 0.2);
+  animation: float 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.5s);
+}
+
+.bgCircle:nth-child(1) { width: 220px; height: 220px; bottom: -80px; right: -60px; }
+.bgCircle:nth-child(2) { width: 120px; height: 120px; top: -30px;    left: 20%; }
+.bgCircle:nth-child(3) { width: 80px;  height: 80px;  top: 40%;      right: 5%; }
+.bgCircle:nth-child(4) { width: 60px;  height: 60px;  bottom: 20%;   left: 5%; }
+.bgCircle:nth-child(5) { width: 100px; height: 100px; top: 10%;      right: 30%; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
 }
 
 .inner {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 clamp(20px, 5vw, 60px);
+  position: relative;
+  z-index: 1;
 }
 
 .layout {
@@ -26,7 +58,8 @@
   width: 100%;
   aspect-ratio: 4/5;
   overflow: hidden;
-  background: var(--border);
+  background: rgba(244, 184, 206, 0.15);
+  border: 1px solid rgba(244, 184, 206, 0.4);
 }
 
 .photo {
@@ -44,7 +77,6 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
-  background: #EEF1F3;
 }
 
 .photoPlaceholderIcon {
@@ -55,7 +87,7 @@
 
 .photoPlaceholderText {
   font-size: 0.72rem;
-  color: var(--blue-gray);
+  color: #D782A0;
   letter-spacing: 0.05em;
   text-align: center;
   padding: 0 16px;
@@ -76,14 +108,14 @@
 .sectionNo {
   font-size: 0.68rem;
   letter-spacing: 0.3em;
-  color: var(--accent);
+  color: #D782A0;
   font-weight: 500;
 }
 
 .headerLine {
   width: 48px;
   height: 1px;
-  background: var(--accent);
+  background: #D782A0;
   flex-shrink: 0;
 }
 
@@ -108,7 +140,7 @@
 
 .role {
   font-size: 0.75rem;
-  color: var(--accent);
+  color: #D782A0;
   letter-spacing: 0.15em;
   font-weight: 500;
   text-transform: uppercase;
@@ -128,13 +160,12 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(244, 184, 206, 0.4);
 }
 
 .featureItem {
   padding: 20px 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(244, 184, 206, 0.4);
 }
 
 .featureHeading {
@@ -154,19 +185,9 @@
 }
 
 @media (max-width: 900px) {
-  .layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .photoCol {
-    position: static;
-    max-width: 400px;
-    margin: 0 auto;
-    width: 100%;
-  }
-  .photoFrame {
-    aspect-ratio: 1/1;
-  }
+  .layout { grid-template-columns: 1fr; gap: 40px; }
+  .photoCol { position: static; max-width: 400px; margin: 0 auto; width: 100%; }
+  .photoFrame { aspect-ratio: 1/1; }
 }
 
 @media (max-width: 768px) {

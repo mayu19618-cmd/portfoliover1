@@ -8,6 +8,12 @@ export default function AboutSection() {
 
   return (
     <section id="about" className={styles.section} aria-label="自己紹介">
+      <div className={styles.bgDeco} aria-hidden="true">
+        {[...Array(5)].map((_, i) => (
+          <div key={i} className={styles.bgCircle} style={{ '--i': i } as React.CSSProperties} />
+        ))}
+      </div>
+
       <div className={styles.inner}>
         <div className={styles.layout}>
           {/* 左：プロフィール写真 */}
@@ -20,17 +26,13 @@ export default function AboutSection() {
           >
             <div className={styles.photoFrame} aria-label="プロフィール写真">
               {photoSrc ? (
-                <img
-                  src={photoSrc}
-                  alt={`${profileData.name}のプロフィール写真`}
-                  className={styles.photo}
-                />
+                <img src={photoSrc} alt={`${profileData.name}のプロフィール写真`} className={styles.photo} />
               ) : (
                 <div className={styles.photoPlaceholder} aria-label="プロフィール写真（未設定）">
                   <span className={styles.photoPlaceholderIcon} aria-hidden="true">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                      <circle cx="20" cy="15" r="7" stroke="#C8D5DC" strokeWidth="2" />
-                      <path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#C8D5DC" strokeWidth="2" strokeLinecap="round" />
+                      <circle cx="20" cy="15" r="7" stroke="#F4B8CE" strokeWidth="2" />
+                      <path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#F4B8CE" strokeWidth="2" strokeLinecap="round" />
                     </svg>
                   </span>
                   <span className={styles.photoPlaceholderText}>管理画面から写真を追加</span>

@@ -19,16 +19,11 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
     : works.filter((w) => w.category === activeCategory);
 
   const handleCardClick = useCallback((id: string) => {
-    if (shouldReduce) {
-      navigate(`/works/${id}`);
-      return;
-    }
+    if (shouldReduce) { navigate(`/works/${id}`); return; }
     if (animatingId) return;
-
     setAnimatingId(id);
     onCarrotDrop(true);
     window.dispatchEvent(new CustomEvent('rabbit-surprised'));
-
     setTimeout(() => {
       setAnimatingId(null);
       onCarrotDrop(false);
@@ -38,6 +33,12 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
 
   return (
     <section id="works" className={styles.section} aria-label="作品一覧">
+      <div className={styles.bgDeco} aria-hidden="true">
+        {[...Array(5)].map((_, i) => (
+          <div key={i} className={styles.bgCircle} style={{ '--i': i } as React.CSSProperties} />
+        ))}
+      </div>
+
       <div className={styles.inner}>
         <motion.div
           className={styles.heading}
@@ -83,10 +84,7 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
                 role="button"
                 aria-label={`${work.title}の詳細を見る`}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    handleCardClick(work.id);
-                  }
+                  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleCardClick(work.id); }
                 }}
               >
                 <div className={styles.imgWrapper}>
@@ -116,11 +114,7 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
 
 function WorkPlaceholder({ color, category }: { color: string; category: string }) {
   return (
-    <div
-      className={styles.placeholder}
-      style={{ background: color }}
-      aria-hidden="true"
-    >
+    <div className={styles.placeholder} style={{ background: color }} aria-hidden="true">
       <span className={styles.placeholderLabel}>{category}</span>
       <span className={styles.placeholderNote}>※ 架空の制作実績</span>
     </div>
