@@ -75,14 +75,20 @@ export default function RabbitCursor() {
   useEffect(() => { preload(); }, []);
 
   useEffect(() => {
+    // 判定基準: (any-pointer: fine) = マウス/トラックパッドが使える環境
+    // 'ontouchstart' in window はPC Chromeでも true になるケースがあるため使用しない
+    // window.innerWidth < 768 はPCの幅次第で誤判定するため使用しない
+    const mq = window.matchMedia('(any-pointer: fine)');
     const check = () => {
-      const mobile = window.innerWidth < 768 || 'ontouchstart' in window;
+      // fine pointer（マウス・トラックパッド）が1つでもあればPC mode
+      const mobile = !mq.matches;
       setIsMobile(mobile);
       isMobileRef.current = mobile;
     };
     check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
+    // ハイブリッド端末でマウスが接続/切断された際にも対応
+    mq.addEventListener('change', check);
+    return () => mq.removeEventListener('change', check);
   }, []);
 
   /* ── アニメーション ── */
