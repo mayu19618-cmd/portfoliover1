@@ -1,97 +1,81 @@
 import { motion } from 'framer-motion';
 import styles from './AboutSection.module.css';
+import { profileData } from '../data/siteData';
 import { pub } from '../utils/assets';
 
-const aboutItems = [
-  {
-    icon: '💫',
-    heading: 'デザインへの想い',
-    body: 'デザインは、想いを言葉以上に伝えられる魔法だと思っています。見た瞬間に「かわいい」「素敵」と感じてもらえる、そんなときめきのあるデザインを大切にしています。',
-  },
-  {
-    icon: '🎨',
-    heading: '得意ジャンル',
-    body: '女性向けのブランディング・WebデザインやSNSコンテンツ制作が得意です。ナチュラル・ガーリー・北欧テイストなど、やわらかくて温かみのあるデザインを多く手がけています。',
-  },
-  {
-    icon: '✨',
-    heading: '提供できるサービス',
-    body: 'ロゴ・名刺・フライヤーなどのグラフィックデザイン、WebサイトのデザインおよびコーディングWordPressでのサイト構築、SNSコンテンツの制作まで幅広くお手伝いします。',
-  },
-  {
-    icon: '🌸',
-    heading: '制作で大切にしていること',
-    body: 'クライアントさんの「こうしたい」という想いをヒアリングし、ターゲットに響くデザインを一緒に作り上げること。納品後に「作ってよかった！」と思っていただける制作を心がけています。',
-  },
-];
-
 export default function AboutSection() {
+  const photoSrc = profileData.photo ? pub(profileData.photo) : null;
+
   return (
     <section id="about" className={styles.section} aria-label="自己紹介">
       <div className={styles.inner}>
-        <motion.div
-          className={styles.heading}
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <span className={styles.sectionNo}>03</span>
-          <h2 className={styles.title}>About Me</h2>
-          <p className={styles.sub}>デザインに、ちょっとしたときめきを。</p>
-        </motion.div>
-
         <div className={styles.layout}>
-          {/* プロフィール */}
+          {/* 左：プロフィール写真 */}
           <motion.div
-            className={styles.profileCol}
-            initial={{ opacity: 0, x: -30 }}
+            className={styles.photoCol}
+            initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div className={styles.avatarWrapper}>
-              <div className={styles.avatar}>
+            <div className={styles.photoFrame} aria-label="プロフィール写真">
+              {photoSrc ? (
                 <img
-                  src={pub('/rabbit1.png')}
-                  alt="うさぎのキャラクター"
-                  width={88}
-                  style={{ display: 'block', filter: 'drop-shadow(0 4px 12px rgba(215,130,160,0.3))' }}
+                  src={photoSrc}
+                  alt={`${profileData.name}のプロフィール写真`}
+                  className={styles.photo}
                 />
-              </div>
-            </div>
-            <div className={styles.profileInfo}>
-              <p className={styles.name}>mayu.</p>
-              <p className={styles.role}>Graphic Designer / Web Designer</p>
-              <p className={styles.intro}>
-                {/* 後から編集できます */}
-                はじめまして、mayuです。<br />
-                女性向けのやわらかくてかわいいデザインを得意としています。<br /><br />
-                クライアントさんの想いに寄り添い、ブランドの世界観を丁寧に言語化しながら、見ている人の心がときめくデザインをお届けしています。<br /><br />
-                "かわいい"と"機能的"を両立したデザインで、あなたのブランドをもっと輝かせます。
-              </p>
+              ) : (
+                <div className={styles.photoPlaceholder} aria-label="プロフィール写真（未設定）">
+                  <span className={styles.photoPlaceholderIcon} aria-hidden="true">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                      <circle cx="20" cy="15" r="7" stroke="#C8D5DC" strokeWidth="2" />
+                      <path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#C8D5DC" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  </span>
+                  <span className={styles.photoPlaceholderText}>管理画面から写真を追加</span>
+                </div>
+              )}
             </div>
           </motion.div>
 
-          {/* 詳細 */}
-          <div className={styles.detailCol}>
-            {aboutItems.map((item, i) => (
-              <motion.div
-                key={item.heading}
-                className={styles.card}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <span className={styles.cardIcon} aria-hidden="true">{item.icon}</span>
-                <div>
-                  <h3 className={styles.cardHeading}>{item.heading}</h3>
-                  <p className={styles.cardBody}>{item.body}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {/* 右：テキスト */}
+          <motion.div
+            className={styles.textCol}
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+          >
+            <div className={styles.eyebrowRow}>
+              <span className={styles.sectionNo}>03</span>
+              <span className={styles.headerLine} aria-hidden="true" />
+            </div>
+            <h2 className={styles.title}>About Me</h2>
+
+            <p className={styles.name}>{profileData.name}</p>
+            <p className={styles.role}>{profileData.role}</p>
+
+            <p className={styles.bio}>
+              {profileData.bio.split('\n').map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < profileData.bio.split('\n').length - 1 && <br />}
+                </span>
+              ))}
+            </p>
+
+            {profileData.features && profileData.features.length > 0 && (
+              <ul className={styles.featureList}>
+                {profileData.features.map((f) => (
+                  <li key={f.heading} className={styles.featureItem}>
+                    <span className={styles.featureHeading}>{f.heading}</span>
+                    <p className={styles.featureBody}>{f.body}</p>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </motion.div>
         </div>
       </div>
     </section>

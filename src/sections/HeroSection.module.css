@@ -1,11 +1,10 @@
 .hero {
   position: relative;
   min-height: 100svh;
+  overflow: hidden;
+  background: #FFFFFF;
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: linear-gradient(160deg, #FFF9FB 0%, #FCE4EC 50%, #FFF0F5 100%);
 }
 
 .canvas {
@@ -15,112 +14,151 @@
   z-index: 0;
 }
 
-.bgDeco {
+.bgText {
   position: absolute;
-  inset: 0;
+  right: -3%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(12rem, 24vw, 24rem);
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.028);
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  user-select: none;
   pointer-events: none;
   z-index: 0;
-}
-
-.circle1 {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: rgba(244, 184, 206, 0.18);
-  top: -120px;
-  right: -100px;
-}
-
-.circle2 {
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  background: rgba(252, 228, 236, 0.4);
-  bottom: -80px;
-  left: -80px;
-}
-
-.circle3 {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: rgba(215, 130, 160, 0.08);
-  top: 30%;
-  left: 10%;
 }
 
 .content {
   position: relative;
   z-index: 1;
-  text-align: center;
-  padding: 100px 24px 80px;
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 160px clamp(20px, 5vw, 60px) 120px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-.rabbitHero {
-  margin-bottom: 8px;
-}
-
-.subEn {
-  font-size: 0.75rem;
+.eyebrow {
+  font-size: 0.72rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #D782A0;
+  color: var(--blue-gray);
   font-weight: 500;
 }
 
 .mainTitle {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-size: clamp(4.5rem, 11vw, 10rem);
   font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #51454A;
-  line-height: 1;
-  margin: 4px 0;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  line-height: 0.95;
+  margin: -4px 0;
 }
 
 .subJa {
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
-  color: #8a7a80;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  margin-top: 4px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-light);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+}
+
+.cta {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  display: inline-block;
+  padding: 13px 32px;
+  background: var(--text);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background var(--transition), transform 0.2s;
+  font-family: inherit;
+}
+
+.ctaPrimary:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
+.ctaSecondary {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: border-color var(--transition), background var(--transition);
+  font-family: inherit;
+}
+
+.ctaSecondary:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
 }
 
 .scrollDown {
   position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 44px;
+  left: clamp(20px, 5vw, 60px);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.scrollText {
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
-  color: #D782A0;
-  font-weight: 500;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 1;
 }
 
 .scrollLine {
-  width: 1.5px;
-  height: 40px;
-  background: linear-gradient(to bottom, #D782A0, transparent);
+  width: 1px;
+  height: 44px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
   transform-origin: top;
+}
+
+.scrollText {
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  color: var(--blue-gray);
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
   .content {
-    padding: 100px 16px 80px;
-    gap: 10px;
+    padding: 140px 20px 100px;
+    gap: 16px;
+  }
+  .bgText {
+    font-size: 36vw;
+    right: -5%;
+  }
+  .cta {
+    margin-top: 16px;
+    gap: 12px;
+  }
+  .ctaPrimary,
+  .ctaSecondary {
+    padding: 11px 22px;
+    font-size: 0.68rem;
+  }
+  .scrollDown {
+    bottom: 28px;
+    left: 20px;
   }
 }

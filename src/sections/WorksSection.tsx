@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { works, categories, type WorkCategory } from '../data/works';
 import styles from './WorksSection.module.css';
+
 interface WorksSectionProps {
   onCarrotDrop: (drop: boolean) => void;
 }
@@ -45,12 +46,14 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className={styles.sectionNo}>02</span>
+          <div className={styles.eyebrowRow}>
+            <span className={styles.sectionNo}>02</span>
+            <span className={styles.headerLine} aria-hidden="true" />
+          </div>
           <h2 className={styles.title}>Selected Works</h2>
           <p className={styles.sub}>ひとつひとつ、想いを込めて。</p>
         </motion.div>
 
-        {/* カテゴリフィルター */}
         <div className={styles.filterRow} role="group" aria-label="カテゴリフィルター">
           {(['All', ...categories] as const).map((cat) => (
             <button
@@ -64,7 +67,6 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
           ))}
         </div>
 
-        {/* 作品グリッド */}
         <motion.div className={styles.grid} layout>
           <AnimatePresence mode="popLayout">
             {filtered.map((work, i) => (
@@ -91,11 +93,11 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
                   {work.thumbnail ? (
                     <img src={work.thumbnail} alt={work.thumbnailAlt} className={styles.img} loading="lazy" />
                   ) : (
-                    <WorkPlaceholder color={work.color} title={work.title} category={work.category} />
+                    <WorkPlaceholder color={work.color} category={work.category} />
                   )}
-                  <div className={styles.overlay}>
-                    <span className={styles.overlayTitle}>{work.title}</span>
-                    <span className={styles.overlayBtn}>View Work →</span>
+                  <div className={styles.caption}>
+                    <span className={styles.captionTitle}>{work.title}</span>
+                    <span className={styles.captionArrow}>→</span>
                   </div>
                 </div>
                 <div className={styles.cardBody}>
@@ -112,12 +114,13 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
   );
 }
 
-function WorkPlaceholder({ color, title, category }: { color: string; title: string; category: string }) {
+function WorkPlaceholder({ color, category }: { color: string; category: string }) {
   return (
-    <div className={styles.placeholder} style={{ background: color }} aria-label={`${title}のプレースホルダー画像`}>
-      <span className={styles.placeholderIcon}>
-        {category === 'Web Design' ? '🌐' : category === 'Graphic Design' ? '🎨' : category === 'Branding' ? '✨' : '📌'}
-      </span>
+    <div
+      className={styles.placeholder}
+      style={{ background: color }}
+      aria-hidden="true"
+    >
       <span className={styles.placeholderLabel}>{category}</span>
       <span className={styles.placeholderNote}>※ 架空の制作実績</span>
     </div>

@@ -1,0 +1,30 @@
+{
+  "groups": [
+    {
+      "category": "Design",
+      "skills": [
+        { "name": "Adobe Illustrator", "level": 5 },
+        { "name": "Adobe Photoshop", "level": 5 },
+        { "name": "Figma", "level": 5 }
+      ]
+    },
+    {
+      "category": "Web",
+      "skills": [
+        { "name": "HTML", "level": 5 },
+        { "name": "CSS", "level": 5 },
+        { "name": "JavaScript", "level": 3 },
+        { "name": "WordPress", "level": 3 },
+        { "name": "Elementor", "level": 3 }
+      ]
+    },
+    {
+      "category": "Marketing",
+      "skills": [
+        { "name": "SNS Marketing", "level": 3 },
+        { "name": "Content Planning", "level": 3 },
+        { "name": "Branding", "level": 5 }
+      ]
+    }
+  ]
+}

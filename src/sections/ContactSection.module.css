@@ -1,183 +1,205 @@
 .section {
-  padding: 100px 0 0;
-  background: linear-gradient(180deg, var(--bg) 0%, var(--pink-light) 100%);
+  padding: 120px 0 0;
+  background: var(--bg-sub);
 }
 
 .inner {
-  max-width: 800px;
+  max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 32px 80px;
-  text-align: center;
+  padding: 0 clamp(20px, 5vw, 60px) 80px;
 }
 
 .heading {
-  margin-bottom: 48px;
+  margin-bottom: 56px;
+}
+
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
 .sectionNo {
-  display: block;
-  font-family: 'Playfair Display', serif;
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   letter-spacing: 0.3em;
-  color: #D782A0;
-  margin-bottom: 8px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.headerLine {
+  width: 48px;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
 }
 
 .title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(2rem, 5vw, 3.8rem);
   font-weight: 700;
   color: var(--text);
   letter-spacing: 0.03em;
-  margin-bottom: 10px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.titleAccent {
+  position: relative;
+  display: inline-block;
+}
+
+.titleAccent::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
 }
 
 .sub {
   font-size: 0.95rem;
   color: var(--text-light);
   letter-spacing: 0.08em;
+  font-weight: 300;
 }
 
-.contactBox {
-  background: white;
-  border-radius: var(--radius-lg);
-  padding: 48px 40px;
-  box-shadow: var(--shadow-card);
+.contactArea {
+  max-width: 640px;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  align-items: center;
 }
 
 .contactText {
   font-size: 0.9rem;
   line-height: 1.9;
   color: var(--text-light);
+  font-weight: 300;
 }
 
 .buttons {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
 }
 
 .btnPrimary {
   display: inline-block;
-  padding: 14px 32px;
-  background: linear-gradient(135deg, #F4B8CE, #D782A0);
+  padding: 13px 32px;
+  background: var(--text);
   color: white;
-  border-radius: 100px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-decoration: none;
-  transition: all 0.3s;
-  box-shadow: 0 4px 16px rgba(215, 130, 160, 0.4);
+  transition: background var(--transition), transform 0.2s;
+  font-family: inherit;
 }
 
 .btnPrimary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(215, 130, 160, 0.5);
+  background: #333;
+  transform: translateY(-1px);
 }
 
-.btnSecondary {
+.btnEmail {
   display: inline-block;
-  padding: 13px 28px;
-  border: 1.5px solid #F4B8CE;
-  color: #D782A0;
-  border-radius: 100px;
   font-size: 0.84rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
+  color: var(--text-light);
   text-decoration: none;
-  transition: all 0.3s;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  transition: color var(--transition), border-color var(--transition);
+  letter-spacing: 0.03em;
 }
 
-.btnSecondary:hover {
-  background: #FCE4EC;
+.btnEmail:hover {
+  color: var(--text);
+  border-color: var(--accent);
 }
 
 .sns {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 14px;
-  width: 100%;
+  gap: 20px;
 }
 
 .snsLabel {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  color: #D782A0;
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  color: var(--blue-gray);
   font-weight: 500;
+  flex-shrink: 0;
 }
 
 .snsLinks {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .snsBtn {
   display: inline-block;
-  padding: 8px 20px;
-  border-radius: 100px;
-  border: 1.5px solid #F4B8CE;
-  color: var(--text);
-  font-size: 0.78rem;
+  padding: 7px 16px;
+  border: 1px solid var(--border);
+  color: var(--text-light);
+  font-size: 0.75rem;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.25s;
+  transition: border-color var(--transition), color var(--transition);
+  letter-spacing: 0.05em;
 }
 
 .snsBtn:hover {
-  background: #F4B8CE;
-  color: white;
-  border-color: #F4B8CE;
+  border-color: var(--accent);
+  color: var(--text);
 }
 
 .farewellRabbit {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
-  margin-top: 32px;
+  margin-top: 56px;
 }
 
 .farewellText {
-  font-size: 0.85rem;
-  color: #D782A0;
+  font-size: 0.82rem;
+  color: var(--accent);
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
+  margin-left: 4px;
 }
 
 .footer {
   background: white;
-  border-top: 1px solid rgba(244, 184, 206, 0.3);
-  padding: 24px 32px;
-  text-align: center;
+  border-top: 1px solid var(--border);
+  padding: 24px clamp(20px, 5vw, 60px);
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
 .footer p {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--text-light);
   letter-spacing: 0.08em;
 }
 
 .footerNote {
-  font-size: 0.65rem !important;
+  font-size: 0.62rem !important;
   color: #bbb !important;
 }
 
 @media (max-width: 768px) {
-  .section { padding-top: 72px; }
-  .inner { padding: 0 20px 60px; }
-  .contactBox { padding: 32px 24px; }
-  .buttons { flex-direction: column; align-items: center; }
-  .btnPrimary, .btnSecondary { width: 100%; text-align: center; }
+  .section { padding-top: 80px; }
+  .inner { padding-bottom: 60px; }
+  .title { margin-bottom: 12px; }
+  .contactArea { gap: 24px; }
+  .buttons { flex-direction: column; align-items: flex-start; }
+  .btnPrimary { width: 100%; text-align: center; }
+  .sns { flex-direction: column; align-items: flex-start; gap: 12px; }
 }

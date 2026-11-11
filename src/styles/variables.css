@@ -1,19 +1,48 @@
 :root {
-  --bg: #FFF9FB;
+  /* Backgrounds */
+  --bg: #FFFFFF;
+  --bg-sub: #F4F6F8;
   --white: #FFFFFF;
-  --pink-light: #FCE4EC;
-  --pink-main: #F4B8CE;
-  --pink-accent: #D782A0;
-  --text: #51454A;
-  --text-light: #8a7a80;
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --shadow-soft: 0 4px 24px rgba(215, 130, 160, 0.12);
-  --shadow-card: 0 8px 32px rgba(215, 130, 160, 0.16);
+
+  /* Accent */
+  --accent: #E8A0B4;
+  --accent-light: #F7D4DF;
+  --accent-dark: #C77A95;
+
+  /* Complementary */
+  --blue-gray: #8FA3B1;
+  --deco: #C8D5DC;
+
+  /* Text */
+  --text: #1C1C1E;
+  --text-light: #6B7685;
+
+  /* Border */
+  --border: #E2E8ED;
+
+  /* Legacy aliases (WorkDetailPage 等で使用) */
+  --pink-light: #F7D4DF;
+  --pink-main: #E8A0B4;
+  --pink-accent: #C77A95;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-soft: 0 2px 20px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.09);
+
+  /* Transitions */
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Fonts */
   --font-display: 'Playfair Display', 'Times New Roman', serif;
   --font-body: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+
+  /* Layout */
+  --max-w: 1200px;
 }
 
 * {
@@ -34,7 +63,7 @@ body {
 }
 
 ::selection {
-  background-color: var(--pink-main);
+  background-color: var(--accent);
   color: var(--white);
 }
 
