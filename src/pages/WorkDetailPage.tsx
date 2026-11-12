@@ -2,6 +2,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { works } from '../data/works';
 import styles from './WorkDetailPage.module.css';
+import { pub } from '../utils/assets';
 
 export default function WorkDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -61,7 +62,7 @@ export default function WorkDetailPage() {
           transition={{ duration: 0.7, delay: 0.1 }}
         >
           {work.thumbnail ? (
-            <img src={work.thumbnail} alt={work.thumbnailAlt} className={styles.mainImg} />
+            <img src={pub(work.thumbnail)} alt={work.thumbnailAlt} className={styles.mainImg} />
           ) : (
             <div className={styles.visualPlaceholder}>
               <span className={styles.visualIcon}>
@@ -134,7 +135,7 @@ export default function WorkDetailPage() {
               <SectionLabel>制作画像</SectionLabel>
               <div className={styles.imageGrid}>
                 {work.images.map((img, i) => (
-                  <img key={i} src={img.url} alt={img.alt} className={styles.workImg} loading="lazy" />
+                  <img key={i} src={pub(img.url)} alt={img.alt} className={styles.workImg} loading="lazy" />
                 ))}
               </div>
             </div>

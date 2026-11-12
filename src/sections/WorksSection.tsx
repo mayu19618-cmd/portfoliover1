@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { works, categories, type WorkCategory } from '../data/works';
 import styles from './WorksSection.module.css';
+import { pub } from '../utils/assets';
 
 interface WorksSectionProps {
   onCarrotDrop: (drop: boolean) => void;
@@ -89,7 +90,7 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
               >
                 <div className={styles.imgWrapper}>
                   {work.thumbnail ? (
-                    <img src={work.thumbnail} alt={work.thumbnailAlt} className={styles.img} loading="lazy" />
+                    <img src={pub(work.thumbnail)} alt={work.thumbnailAlt} className={styles.img} loading="lazy" />
                   ) : (
                     <WorkPlaceholder color={work.color} category={work.category} />
                   )}

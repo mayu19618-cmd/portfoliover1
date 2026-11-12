@@ -23,7 +23,7 @@ collections:
   # =========================================================
   - name: profile
     label: "プロフィール"
-    media_folder: "public/images/profile"
+    media_folder: "/public/images/profile"
     public_folder: "/images/profile"
     files:
       - name: main
@@ -163,7 +163,7 @@ collections:
     label: "作品"
     label_singular: "作品1件"
     folder: content/works
-    media_folder: "public/images/works"
+    media_folder: "/public/images/works"
     public_folder: "/images/works"
     create: true
     delete: true
