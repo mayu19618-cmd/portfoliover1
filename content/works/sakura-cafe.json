@@ -1,23 +1,29 @@
 {
-  "title": "Sakura Café",
-  "category": "Web Design",
-  "year": 2024,
-  "order": 1,
-  "published": true,
-  "thumbnail": "",
-  "thumbnailAlt": "架空のカフェWebサイトのデザインモックアップ",
   "color": "#FCE4EC",
-  "duration": "",
   "siteUrl": "",
-  "overview": "架空の桜カフェのWebサイトリニューアル。季節感と温かみを大切にしたデザイン。",
-  "purpose": "オンライン予約の促進と、ブランドの世界観を伝えること。",
-  "target": "20〜30代の女性、カフェ巡りが好きなライフスタイル層",
   "concept": "桜の柔らかさと日本の美意識を融合した、見ているだけで心が和むデザイン。",
-  "tools": ["Figma", "Adobe Illustrator", "HTML", "CSS", "JavaScript"],
+  "thumbnail": "",
+  "published": true,
+  "order": 5,
+  "target": "20〜30代の女性、カフェ巡りが好きなライフスタイル層",
+  "duration": "",
+  "title": "Sakura Café",
+  "images": [],
+  "overview": "架空の桜カフェのWebサイトリニューアル。季節感と温かみを大切にしたデザイン。",
+  "tools": [
+    "Figma",
+    "Adobe Illustrator",
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "year": 2024,
+  "thumbnailAlt": "架空のカフェWebサイトのデザインモックアップ",
+  "category": "Web Design",
+  "purpose": "オンライン予約の促進と、ブランドの世界観を伝えること。",
   "highlights": [
     "桜の花びらが舞うCSS-onlyアニメーション",
     "モバイルファーストで制作し、どのデバイスでも美しく見えるレスポンシブ対応",
     "予約フォームのUXを最適化し、3ステップで完結する導線設計"
-  ],
-  "images": []
+  ]
 }
