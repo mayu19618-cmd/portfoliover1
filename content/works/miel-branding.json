@@ -1,23 +1,22 @@
 {
-  "title": "miel — ハチミツブランド",
-  "category": "Branding",
-  "year": 2024,
-  "order": 2,
-  "published": true,
-  "thumbnail": "",
-  "thumbnailAlt": "架空のハチミツブランドのブランディングデザイン",
-  "color": "#FFF3E0",
-  "duration": "",
+  "color": "#eaeee0",
   "siteUrl": "",
-  "overview": "架空のオーガニックハチミツブランドのVI（ビジュアルアイデンティティ）制作。",
-  "purpose": "自然派・高品質なブランドイメージを構築し、差別化を図る。",
-  "target": "健康意識の高い30〜40代の女性",
   "concept": "蜂の巣の六角形モチーフと、ゴールドとクリームの落ち着いた配色で自然の豊かさを表現。",
-  "tools": ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
-  "highlights": [
-    "ロゴ、パッケージ、ショップカード、Webバナーまでトータルでブランディングを統一",
-    "六角形グリッドシステムを用いたデザイン展開",
-    "ゴールド箔風の質感をDTP・Web両方に応用"
+  "thumbnail": "/portfoliover1/images/works/アートボード-1.png",
+  "published": true,
+  "order": 2,
+  "target": "あと月5万あればと思っている中年男性",
+  "duration": "20分",
+  "title": "マネスク - 副業系Youtubeチャンネル",
+  "images": [],
+  "overview": "架空の副業系YouTubeチャンネルのサムネイル作成。",
+  "tools": [
+    "Adobe Illustrator",
+    "chatgpt(男性画像生成)"
   ],
-  "images": []
+  "year": 2026,
+  "thumbnailAlt": "架空の副業系YouTubeチャンネルのサムネイル作成",
+  "category": "Graphic Design",
+  "purpose": "あ",
+  "highlights": []
 }
