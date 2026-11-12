@@ -7,8 +7,8 @@ backend:
   turbo_site_id: 678d80da-014b-4b5e-9bb8-73e272c4a546
 
 # 画像のデフォルト保存場所（コレクションごとに上書き可能）
-media_folder: "public/images"
-public_folder: "/images"
+media_folder: "/public/images"
+public_folder: "/portfoliover1/images"
 
 # サイトURL（プレビューリンクに使用）
 site_url: https://mayu19618-cmd.github.io/portfoliover1
@@ -24,7 +24,7 @@ collections:
   - name: profile
     label: "プロフィール"
     media_folder: "/public/images/profile"
-    public_folder: "/images/profile"
+    public_folder: "/portfoliover1/images/profile"
     files:
       - name: main
         label: "プロフィール設定"
@@ -164,7 +164,7 @@ collections:
     label_singular: "作品1件"
     folder: content/works
     media_folder: "/public/images/works"
-    public_folder: "/images/works"
+    public_folder: "/portfoliover1/images/works"
     create: true
     delete: true
     slug: "{{slug}}"
