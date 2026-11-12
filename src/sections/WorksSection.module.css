@@ -226,6 +226,15 @@
   flex-shrink: 0;
 }
 
+.worksNote {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #C77A95;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+}
+
 @media (max-width: 1024px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
 }

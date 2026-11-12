@@ -107,6 +107,10 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        <p className={styles.worksNote}>
+          ✦ 作品は一例です。今後たくさんの作品を追加予定です ✦
+        </p>
       </div>
     </section>
   );
