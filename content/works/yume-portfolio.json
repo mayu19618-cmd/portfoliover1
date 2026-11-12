@@ -1,23 +1,29 @@
 {
-  "title": "yume — イラストレーターポートフォリオ",
-  "category": "Web Design",
-  "year": 2023,
-  "order": 4,
-  "published": true,
-  "thumbnail": "",
-  "thumbnailAlt": "架空のイラストレーターポートフォリオサイト",
   "color": "#E8EAF6",
-  "duration": "",
   "siteUrl": "",
-  "overview": "架空のイラストレーター向けポートフォリオサイト。作品の世界観を最大限に引き出すデザイン。",
-  "purpose": "仕事依頼の増加と、イラストレーターとしてのブランド確立。",
-  "target": "イラスト依頼を検討している企業・個人クライアント",
   "concept": "作品が主役になるよう余白を大胆に使い、ギャラリーとして見やすい構成を追求。",
-  "tools": ["Figma", "HTML", "CSS", "JavaScript", "WordPress"],
+  "thumbnail": "/portfoliover1/images/works/アート.png",
+  "published": true,
+  "order": 4,
+  "target": "イラスト依頼を検討している企業・個人クライアント",
+  "duration": "",
+  "title": "yume — イラストレーターポートフォリオ",
+  "images": [],
+  "overview": "架空のイラストレーター向けポートフォリオサイト。作品の世界観を最大限に引き出すデザイン。",
+  "tools": [
+    "Figma",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "WordPress"
+  ],
+  "year": 2023,
+  "thumbnailAlt": "架空のイラストレーターポートフォリオサイト",
+  "category": "Web Design",
+  "purpose": "仕事依頼の増加と、イラストレーターとしてのブランド確立。",
   "highlights": [
     "ホバー時に作品の雰囲気が伝わるマイクロインタラクション",
     "CMS（WordPress）連携でイラストレーター自身が更新できる仕組み",
     "ライトモード/ダークモード切り替え機能"
-  ],
-  "images": []
+  ]
 }
