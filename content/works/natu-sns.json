@@ -1,23 +1,27 @@
 {
-  "title": "natu — SNSコンテンツ制作",
-  "category": "Other Works",
-  "year": 2023,
-  "order": 5,
-  "published": true,
-  "thumbnail": "",
-  "thumbnailAlt": "架空のナチュラルコスメブランドのSNSコンテンツ",
   "color": "#E8F5E9",
-  "duration": "",
   "siteUrl": "",
-  "overview": "架空のナチュラルコスメブランドのInstagram用フィード・ストーリーズ制作（全30点）。",
-  "purpose": "フォロワーのエンゲージメント向上と、新商品のブランド認知拡大。",
-  "target": "自然派コスメに興味のある20〜35代女性",
-  "concept": "アース系カラーとクリーンなレイアウトで、ブランドの誠実さと自然志向を表現。",
-  "tools": ["Adobe Photoshop", "Canva", "Figma"],
+  "concept": "あ",
+  "thumbnail": "/portfoliover1/images/works/名称未設定のデザイン-1-.png",
+  "published": true,
+  "order": 3,
+  "target": "仕事をもっと頑張りたいと考えている20〜40代女性",
+  "duration": "20分",
+  "title": "あ",
+  "images": [],
+  "overview": "あ",
+  "tools": [
+    "Adobe Photoshop",
+    "Canva",
+    "Figma"
+  ],
+  "year": 2026,
+  "thumbnailAlt": "あ",
+  "category": "Graphic Design",
+  "purpose": "あ",
   "highlights": [
     "フィード全体のカラーグリッドを設計し、統一感のある世界観を演出",
     "ストーリーズ用のアニメーションテンプレートを作成",
     "エンゲージメント率が前月比150%に向上（架空データ）"
-  ],
-  "images": []
+  ]
 }
