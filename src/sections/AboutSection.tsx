@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import styles from './AboutSection.module.css';
 import { profileData } from '../data/siteData';
 import { pub } from '../utils/assets';
+import { formatText } from '../utils/formatText';
 
 export default function AboutSection() {
   const photoSrc = profileData.photo ? pub(profileData.photo) : null;
@@ -60,12 +61,7 @@ export default function AboutSection() {
             <p className={styles.role}>{profileData.role}</p>
 
             <p className={styles.bio}>
-              {profileData.bio.split('\n').map((line, i) => (
-                <span key={i}>
-                  {line}
-                  {i < profileData.bio.split('\n').length - 1 && <br />}
-                </span>
-              ))}
+              {formatText(profileData.bio)}
             </p>
 
             {profileData.features && profileData.features.length > 0 && (

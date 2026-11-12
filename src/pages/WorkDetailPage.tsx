@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { works } from '../data/works';
 import styles from './WorkDetailPage.module.css';
 import { pub } from '../utils/assets';
+import { formatText } from '../utils/formatText';
 
 export default function WorkDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -92,19 +93,19 @@ export default function WorkDetailPage() {
           >
             <div className={styles.infoPanel}>
               <InfoItem label="制作概要">
-                <p className={styles.infoText}>{work.overview}</p>
+                <p className={styles.infoText}>{formatText(work.overview)}</p>
               </InfoItem>
 
               <InfoItem label="制作目的">
-                <p className={styles.infoText}>{work.purpose}</p>
+                <p className={styles.infoText}>{formatText(work.purpose)}</p>
               </InfoItem>
 
               <InfoItem label="ターゲット">
-                <p className={styles.infoText}>{work.target}</p>
+                <p className={styles.infoText}>{formatText(work.target)}</p>
               </InfoItem>
 
               <InfoItem label="デザインコンセプト">
-                <p className={styles.infoText}>{work.concept}</p>
+                <p className={styles.infoText}>{formatText(work.concept)}</p>
               </InfoItem>
 
               <InfoItem label="使用ツール">

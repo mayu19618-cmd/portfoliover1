@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import styles from './ContactSection.module.css';
 import { siteData } from '../data/siteData';
 import { pub } from '../utils/assets';
+import { formatText } from '../utils/formatText';
 
 export default function ContactSection() {
   const snsLinks = [
@@ -46,12 +47,7 @@ export default function ContactSection() {
         >
           {siteData.contactText && (
             <p className={styles.contactText}>
-              {siteData.contactText.split('\n').map((line, i, arr) => (
-                <span key={i}>
-                  {line}
-                  {i < arr.length - 1 && <br />}
-                </span>
-              ))}
+              {formatText(siteData.contactText)}
             </p>
           )}
 
