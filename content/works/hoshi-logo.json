@@ -1,23 +1,23 @@
 {
-  "title": "hoshi — ヨガスタジオVI",
-  "category": "Branding",
-  "year": 2023,
-  "order": 6,
-  "published": true,
-  "thumbnail": "",
-  "thumbnailAlt": "架空のヨガスタジオのVI・ロゴデザイン",
-  "color": "#E3F2FD",
-  "duration": "",
+  "color": "#1a8deb",
   "siteUrl": "",
-  "overview": "架空のヨガスタジオのロゴ・名刺・ウェルカムカード・会員証のトータルデザイン。",
-  "purpose": "穏やかで洗練されたブランドイメージの構築。",
-  "target": "癒しと健康を求める30〜50代の女性",
-  "concept": "星と月のモチーフを用いたロゴで、日々の練習に宇宙の静けさをイメージ。ネイビーとゴールドの組み合わせで上質感を演出。",
-  "tools": ["Adobe Illustrator", "Figma"],
-  "highlights": [
-    "ロゴのゴールデンラシオを使ったプロポーション設計",
-    "名刺・会員証の箔押し対応データの作成",
-    "ロゴのカラーバリエーション（ライト・ダーク・モノクロ）を整備"
+  "concept": "あああ",
+  "thumbnail": "/images/works/s__63250436-1-1-.jpg",
+  "published": true,
+  "order": 1,
+  "target": "できるだけ服を持たなくていいような生活を考える30~50代女性",
+  "duration": "15分",
+  "title": "ファッション",
+  "images": [],
+  "overview": "ああああ",
+  "tools": [
+    "Adobe Illustrator"
   ],
-  "images": []
+  "year": 2026,
+  "thumbnailAlt": "30~50代女性向けファッション系Youtubeサムネイル（架空）",
+  "category": "Graphic Design",
+  "purpose": "シンプルで",
+  "highlights": [
+    "あああ"
+  ]
 }
