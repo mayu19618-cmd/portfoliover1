@@ -182,6 +182,14 @@ collections:
         field: published
 
     fields:
+      # ── URL ───────────────────────────────────────
+      - label: "カスタムURL（スラッグ）"
+        name: slug
+        widget: string
+        required: false
+        hint: "作品ページのURL末尾を設定します。例：sakura-cafe → /works/sakura-cafe　※ 未入力の場合はファイル名が使われます。英数字・ハイフンのみ推奨。"
+        pattern: ['^[a-z0-9-]*$', '英小文字・数字・ハイフンのみ使用できます']
+
       # ── 公開設定 ──────────────────────────────────
       - label: "公開状態"
         name: published

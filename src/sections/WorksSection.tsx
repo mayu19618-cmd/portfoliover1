@@ -20,7 +20,9 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
     : works.filter((w) => w.category === activeCategory);
 
   const handleCardClick = useCallback((id: string) => {
-    if (shouldReduce) { navigate(`/works/${id}`); return; }
+    const work = works.find((w) => w.id === id);
+    const slug = work?.urlSlug ?? id;
+    if (shouldReduce) { navigate(`/works/${slug}`); return; }
     if (animatingId) return;
     setAnimatingId(id);
     onCarrotDrop(true);
@@ -28,7 +30,7 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
     setTimeout(() => {
       setAnimatingId(null);
       onCarrotDrop(false);
-      navigate(`/works/${id}`);
+      navigate(`/works/${slug}`);
     }, 1400);
   }, [animatingId, navigate, onCarrotDrop, shouldReduce]);
 

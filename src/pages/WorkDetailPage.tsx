@@ -7,7 +7,7 @@ import { pub } from '../utils/assets';
 export default function WorkDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const index = works.findIndex((w) => w.id === id);
+  const index = works.findIndex((w) => w.urlSlug === id || w.id === id);
   const work = works[index];
 
   if (!work) {
@@ -145,7 +145,7 @@ export default function WorkDetailPage() {
         <nav className={styles.pagination} aria-label="前後の作品">
           <div className={styles.paginationItem}>
             {prevWork && (
-              <Link to={`/works/${prevWork.id}`} className={styles.pageLink}>
+              <Link to={`/works/${prevWork.urlSlug}`} className={styles.pageLink}>
                 <span className={styles.pageLinkDir}>← PREV</span>
                 <span className={styles.pageLinkTitle}>{prevWork.title}</span>
               </Link>
@@ -154,7 +154,7 @@ export default function WorkDetailPage() {
           <Link to="/#works" className={styles.allLink}>一覧へ</Link>
           <div className={`${styles.paginationItem} ${styles.paginationRight}`}>
             {nextWork && (
-              <Link to={`/works/${nextWork.id}`} className={styles.pageLink}>
+              <Link to={`/works/${nextWork.urlSlug}`} className={styles.pageLink}>
                 <span className={styles.pageLinkDir}>NEXT →</span>
                 <span className={styles.pageLinkTitle}>{nextWork.title}</span>
               </Link>
