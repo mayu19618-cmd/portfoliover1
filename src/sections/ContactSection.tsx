@@ -13,7 +13,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className={styles.section} aria-label="お問い合わせ">
       <div className={styles.bgDeco} aria-hidden="true">
-        {[...Array(4)].map((_, i) => (
+        {[...Array(2)].map((_, i) => (
           <div key={i} className={styles.bgCircle} style={{ '--i': i } as React.CSSProperties} />
         ))}
       </div>

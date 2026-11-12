@@ -34,7 +34,7 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
   return (
     <section id="works" className={styles.section} aria-label="作品一覧">
       <div className={styles.bgDeco} aria-hidden="true">
-        {[...Array(5)].map((_, i) => (
+        {[...Array(2)].map((_, i) => (
           <div key={i} className={styles.bgCircle} style={{ '--i': i } as React.CSSProperties} />
         ))}
       </div>
@@ -93,10 +93,7 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
                   ) : (
                     <WorkPlaceholder color={work.color} category={work.category} />
                   )}
-                  <div className={styles.caption}>
-                    <span className={styles.captionTitle}>{work.title}</span>
-                    <span className={styles.captionArrow}>→</span>
-                  </div>
+
                 </div>
                 <div className={styles.cardBody}>
                   <span className={styles.category}>{work.category}</span>

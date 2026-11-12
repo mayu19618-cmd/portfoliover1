@@ -22,11 +22,8 @@
   animation-delay: calc(var(--i) * 0.5s);
 }
 
-.bgCircle:nth-child(1) { width: 220px; height: 220px; bottom: -80px; right: -60px; }
-.bgCircle:nth-child(2) { width: 120px; height: 120px; top: -30px;    left: 20%; }
-.bgCircle:nth-child(3) { width: 80px;  height: 80px;  top: 40%;      right: 5%; }
-.bgCircle:nth-child(4) { width: 60px;  height: 60px;  bottom: 20%;   left: 5%; }
-.bgCircle:nth-child(5) { width: 100px; height: 100px; top: 10%;      right: 30%; }
+.bgCircle:nth-child(1) { width: 100px; height: 100px; top: 16%;    right: 10%; }
+.bgCircle:nth-child(2) { width: 70px;  height: 70px;  bottom: 20%; left: 10%; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -120,7 +117,7 @@
 }
 
 .title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: clamp(2.2rem, 4.5vw, 3.2rem);
   font-weight: 700;
   color: var(--text);
@@ -130,7 +127,7 @@
 }
 
 .name {
-  font-family: 'Playfair Display', serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text);
@@ -185,6 +182,7 @@
 }
 
 @media (max-width: 900px) {
+  .bgDeco { display: none; }
   .layout { grid-template-columns: 1fr; gap: 40px; }
   .photoCol { position: static; max-width: 400px; margin: 0 auto; width: 100%; }
   .photoFrame { aspect-ratio: 1/1; }

@@ -9,7 +9,6 @@ interface CarrotDropAnimationProps {
 
 export default function CarrotDropAnimation({ startX, startY }: CarrotDropAnimationProps) {
   const floorY = window.innerHeight - 80;
-  // carrot.png は横長(1536×1024)なので表示高さを固定して横幅は自動
   const carrotH = 44;
   const carrotW = Math.round(carrotH * (1536 / 1024)); // ≈ 66px
   const offsetX = carrotW / 2;
@@ -32,10 +31,10 @@ export default function CarrotDropAnimation({ startX, startY }: CarrotDropAnimat
         style={{ height: carrotH }}
       >
         <img
-          src={pub('/carrot.png')}
+          src={pub('/carrot-deco.png')}
           alt=""
           height={carrotH}
-          style={{ display: 'block', height: carrotH, width: 'auto' }}
+          style={{ display: 'block', height: carrotH, width: 'auto', mixBlendMode: 'multiply' }}
         />
       </motion.div>
 

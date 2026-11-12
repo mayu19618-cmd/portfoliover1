@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import styles from './HeroSection.module.css';
 import { siteData } from '../data/siteData';
+import { pub } from '../utils/assets';
 
 export default function HeroSection() {
   const shouldReduce = useReducedMotion();
@@ -9,7 +10,7 @@ export default function HeroSection() {
     <section id="home" className={styles.hero} aria-label="ヒーローセクション">
       {/* Loadingと同じ水玉装飾 */}
       <div className={styles.bgDeco} aria-hidden="true">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(2)].map((_, i) => (
           <div key={i} className={styles.bgCircle} style={{ '--i': i } as React.CSSProperties} />
         ))}
       </div>
@@ -50,26 +51,36 @@ export default function HeroSection() {
           animate={shouldReduce ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.56 }}
         >
-          <a
+          <motion.a
             href="#works"
-            className={styles.ctaPrimary}
+            className={styles.carrotBtn}
+            whileHover={shouldReduce ? undefined : { y: -6 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             onClick={(e) => {
               e.preventDefault();
               document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            View Works
-          </a>
-          <a
+            <div className={styles.carrotWrapper}>
+              <img src={pub('/carrot-deco.png')} alt="" className={styles.carrotImg} aria-hidden="true" />
+              <span className={styles.carrotLabel}>View Works</span>
+            </div>
+          </motion.a>
+          <motion.a
             href="#about"
-            className={styles.ctaSecondary}
+            className={styles.carrotBtn}
+            whileHover={shouldReduce ? undefined : { y: -6 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             onClick={(e) => {
               e.preventDefault();
               document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            About Me
-          </a>
+            <div className={styles.carrotWrapper}>
+              <img src={pub('/carrot-deco.png')} alt="" className={styles.carrotImg} aria-hidden="true" />
+              <span className={styles.carrotLabel}>About Me</span>
+            </div>
+          </motion.a>
         </motion.div>
       </div>
 

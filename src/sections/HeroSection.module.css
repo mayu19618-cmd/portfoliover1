@@ -25,12 +25,8 @@
   animation-delay: calc(var(--i) * 0.6s);
 }
 
-.bgCircle:nth-child(1) { width: 240px; height: 240px; top: -80px;  left: -80px; }
-.bgCircle:nth-child(2) { width: 180px; height: 180px; top: 15%;    right: -50px; }
-.bgCircle:nth-child(3) { width: 130px; height: 130px; bottom: 8%;  left: 8%; }
-.bgCircle:nth-child(4) { width: 90px;  height: 90px;  top: 42%;    left: 4%; }
-.bgCircle:nth-child(5) { width: 110px; height: 110px; bottom: 18%; right: 12%; }
-.bgCircle:nth-child(6) { width: 70px;  height: 70px;  top: 12%;    left: 38%; }
+.bgCircle:nth-child(1) { width: 180px; height: 180px; top: 16%;    right: 10%; }
+.bgCircle:nth-child(2) { width: 110px; height: 110px; bottom: 24%; left: 10%; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -43,7 +39,7 @@
   right: -3%;
   top: 50%;
   transform: translateY(-50%);
-  font-family: 'Playfair Display', serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: clamp(12rem, 24vw, 24rem);
   font-weight: 700;
   color: rgba(215, 130, 160, 0.06);
@@ -77,7 +73,7 @@
 }
 
 .mainTitle {
-  font-family: 'Playfair Display', serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: clamp(1.8rem, 10.5vw, 10rem);
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -98,47 +94,52 @@
 /* ── CTAボタン ── */
 .cta {
   display: flex;
-  gap: 16px;
-  margin-top: 24px;
+  gap: 8px;
+  margin-top: 40px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
-.ctaPrimary {
+.carrotBtn {
   display: inline-block;
-  padding: 13px 32px;
-  background: #51454A;
-  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.carrotBtn:focus-visible .carrotImg {
+  filter: drop-shadow(0 0 6px rgba(215, 130, 160, 0.7));
+}
+
+.carrotWrapper {
+  position: relative;
+  display: inline-block;
+  width: 180px;
+}
+
+.carrotImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: rotate(0deg);
+  mix-blend-mode: multiply;
+  opacity: 0.88;
+}
+
+.carrotLabel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: #5B4D52;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  text-decoration: none;
-  transition: background 0.25s, transform 0.2s;
+  white-space: nowrap;
+  pointer-events: none;
   font-family: inherit;
-}
-
-.ctaPrimary:hover {
-  background: #3a3038;
-  transform: translateY(-1px);
-}
-
-.ctaSecondary {
-  display: inline-block;
-  padding: 12px 28px;
-  border: 1.5px solid rgba(215, 130, 160, 0.5);
-  color: #51454A;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: border-color 0.25s, background 0.25s;
-  font-family: inherit;
-}
-
-.ctaSecondary:hover {
-  border-color: #D782A0;
-  background: rgba(244, 184, 206, 0.2);
 }
 
 /* ── スクロールインジケーター ── */
@@ -168,6 +169,7 @@
 }
 
 @media (max-width: 768px) {
+  .bgDeco { display: none; }
   .content {
     padding: 140px 20px 100px;
     gap: 16px;
@@ -177,13 +179,14 @@
     right: -5%;
   }
   .cta {
-    margin-top: 16px;
-    gap: 12px;
+    margin-top: 32px;
+    gap: 4px;
   }
-  .ctaPrimary,
-  .ctaSecondary {
-    padding: 11px 22px;
-    font-size: 0.68rem;
+  .carrotWrapper {
+    width: 140px;
+  }
+  .carrotLabel {
+    font-size: 0.65rem;
   }
   .scrollDown {
     bottom: 28px;

@@ -9,7 +9,7 @@ export default function AboutSection() {
   return (
     <section id="about" className={styles.section} aria-label="自己紹介">
       <div className={styles.bgDeco} aria-hidden="true">
-        {[...Array(5)].map((_, i) => (
+        {[...Array(2)].map((_, i) => (
           <div key={i} className={styles.bgCircle} style={{ '--i': i } as React.CSSProperties} />
         ))}
       </div>

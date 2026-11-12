@@ -71,7 +71,7 @@
 }
 
 .title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 700;
   color: var(--text);
@@ -116,7 +116,7 @@
 }
 
 .visualTitle {
-  font-family: 'Playfair Display', serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--text);

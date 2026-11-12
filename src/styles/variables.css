@@ -38,8 +38,8 @@
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Fonts */
-  --font-display: 'Playfair Display', 'Times New Roman', serif;
-  --font-body: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  --font-display: 'M PLUS Rounded 1c', sans-serif;
+  --font-body: 'M PLUS Rounded 1c', sans-serif;
 
   /* Layout */
   --max-w: 1200px;
