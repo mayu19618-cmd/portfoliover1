@@ -47,8 +47,7 @@ export default function WorkDetailPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className={styles.note}>※ 以下はすべて架空の制作実績です</div>
-          <span className={styles.category}>{work.category}</span>
+<span className={styles.category}>{work.category}</span>
           <h1 className={styles.title}>{work.title}</h1>
           <p className={styles.year}>{work.year}年制作</p>
         </motion.header>

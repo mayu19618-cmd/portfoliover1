@@ -49,16 +49,6 @@
   margin-bottom: 32px;
 }
 
-.note {
-  display: inline-block;
-  font-size: 0.72rem;
-  color: white;
-  background: #D782A0;
-  padding: 4px 12px;
-  border-radius: 100px;
-  margin-bottom: 16px;
-  letter-spacing: 0.05em;
-}
 
 .category {
   display: block;
