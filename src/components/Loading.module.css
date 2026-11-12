@@ -40,7 +40,6 @@
 .rabbit {
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 8px 20px rgba(215, 130, 160, 0.3));
 }
 
 .text {

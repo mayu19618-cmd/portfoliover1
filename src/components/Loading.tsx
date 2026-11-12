@@ -72,7 +72,7 @@ export default function Loading({ onComplete }: LoadingProps) {
               src={pub('/rabbit1.png')}
               alt=""
               width={80}
-              style={{ display: 'block', filter: 'drop-shadow(0 8px 24px rgba(215,130,160,0.42))' }}
+              style={{ display: 'block', filter: 'drop-shadow(0 6px 18px rgba(215,130,160,0.38))' }}
               aria-hidden="true"
             />
           </motion.div>

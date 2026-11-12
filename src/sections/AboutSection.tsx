@@ -8,6 +8,15 @@ export default function AboutSection() {
 
   return (
     <section id="about" className={styles.section} aria-label="自己紹介">
+      {/* blob clip path — ID はドキュメント全体で一意 */}
+      <svg width="0" height="0" style={{ position: 'absolute' }} aria-hidden="true" focusable="false">
+        <defs>
+          <clipPath id="aboutBlobClip" clipPathUnits="objectBoundingBox">
+            <path d="M 0.50,0.03 C 0.67,0.00 0.90,0.04 0.96,0.22 C 1.02,0.40 0.94,0.58 0.97,0.74 C 1.00,0.90 0.86,1.02 0.67,0.99 C 0.48,0.96 0.26,1.03 0.10,0.93 C -0.04,0.83 0.03,0.64 0.03,0.46 C 0.03,0.28 0.10,0.07 0.28,0.03 C 0.37,0.01 0.44,0.04 0.50,0.03 Z" />
+          </clipPath>
+        </defs>
+      </svg>
+
       <div className={styles.bgDeco} aria-hidden="true">
         {[...Array(2)].map((_, i) => (
           <div key={i} className={styles.bgCircle} style={{ '--i': i } as React.CSSProperties} />
@@ -28,15 +37,7 @@ export default function AboutSection() {
               {photoSrc ? (
                 <img src={photoSrc} alt={`${profileData.name}のプロフィール写真`} className={styles.photo} />
               ) : (
-                <div className={styles.photoPlaceholder} aria-label="プロフィール写真（未設定）">
-                  <span className={styles.photoPlaceholderIcon} aria-hidden="true">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                      <circle cx="20" cy="15" r="7" stroke="#F4B8CE" strokeWidth="2" />
-                      <path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#F4B8CE" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                  </span>
-                  <span className={styles.photoPlaceholderText}>管理画面から写真を追加</span>
-                </div>
+                <div className={styles.photoPlaceholder} aria-label="プロフィール写真（未設定）" />
               )}
             </div>
           </motion.div>
