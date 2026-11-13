@@ -46,15 +46,16 @@ export default function Loading({ onComplete }: LoadingProps) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* 背景装飾 */}
           <div className={styles.bgDeco}>
             {[...Array(6)].map((_, i) => (
               <div key={i} className={styles.bgCircle} style={{ '--i': i } as React.CSSProperties} />
             ))}
           </div>
 
-          {/* うさぎ */}
-          <motion.div
+          <motion.img
+            src={pub('/rabbit1.png')}
+            alt=""
+            width={80}
             className={styles.rabbit}
             animate={
               phase === 'jump'
@@ -66,18 +67,10 @@ export default function Loading({ onComplete }: LoadingProps) {
                 ? { duration: 0.52, ease: 'easeOut' }
                 : { duration: 0.9, repeat: Infinity, ease: 'easeInOut' }
             }
-            style={{ transformOrigin: 'center bottom', display: 'inline-block' }}
-          >
-            <img
-              src={pub('/rabbit1.png')}
-              alt=""
-              width={80}
-              style={{ display: 'block', filter: 'drop-shadow(0 6px 18px rgba(215,130,160,0.38))' }}
-              aria-hidden="true"
-            />
-          </motion.div>
+            style={{ display: 'block', filter: 'drop-shadow(0 6px 18px rgba(215,130,160,0.38))', transformOrigin: 'center bottom' }}
+            aria-hidden="true"
+          />
 
-          {/* ローディングテキスト */}
           <div className={styles.text}>
             <span className={styles.loading}>Loading</span>
             <span className={styles.dots}>
