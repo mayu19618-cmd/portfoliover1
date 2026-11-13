@@ -52,24 +52,27 @@ export default function Loading({ onComplete }: LoadingProps) {
             ))}
           </div>
 
-          <motion.img
-            src={pub('/rabbit1.png')}
-            alt=""
-            width={80}
-            className={styles.rabbit}
-            animate={
-              phase === 'jump'
-                ? ({ y: [0, -44, 0], scaleY: [1, 1.12, 0.88, 1], scaleX: [1, 0.88, 1.10, 1] } as any)
-                : ({ y: [0, -8, 0] } as any)
-            }
-            transition={
-              phase === 'jump'
-                ? { duration: 0.52, ease: 'easeOut' }
-                : { duration: 0.9, repeat: Infinity, ease: 'easeInOut' }
-            }
-            style={{ display: 'block', filter: 'drop-shadow(0 6px 18px rgba(215,130,160,0.38))', transformOrigin: 'center bottom' }}
-            aria-hidden="true"
-          />
+          <div className={styles.rabbitWrap} aria-hidden="true">
+            {/* 影：アニメーション要素と分離し filter を持つ */}
+            <div className={styles.rabbitShadow} />
+            <motion.img
+              src={pub('/rabbit1.png')}
+              alt=""
+              width={80}
+              className={styles.rabbit}
+              animate={
+                phase === 'jump'
+                  ? ({ y: [0, -44, 0], scaleY: [1, 1.12, 0.88, 1], scaleX: [1, 0.88, 1.10, 1] } as any)
+                  : ({ y: [0, -8, 0] } as any)
+              }
+              transition={
+                phase === 'jump'
+                  ? { duration: 0.52, ease: 'easeOut' }
+                  : { duration: 0.9, repeat: Infinity, ease: 'easeInOut' }
+              }
+              style={{ display: 'block', transformOrigin: 'center bottom' }}
+            />
+          </div>
 
           <div className={styles.text}>
             <span className={styles.loading}>Loading</span>

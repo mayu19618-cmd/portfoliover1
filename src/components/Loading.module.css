@@ -37,10 +37,28 @@
   50% { transform: translateY(-12px); }
 }
 
-.rabbit {
-  display: block;
+.rabbitWrap {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* アニメーション要素と完全分離した影。filter はここだけ */
+.rabbitShadow {
+  width: 54px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(215, 130, 160, 0.3);
+  filter: blur(7px);
+  order: 2; /* 画像の下に表示 */
+  margin-top: -6px;
+}
+
+.rabbit {
+  display: block;
+  order: 1;
 }
 
 .text {
