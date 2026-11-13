@@ -40,8 +40,11 @@ export const works: Work[] = Object.entries(modules)
     const id = path.split('/').pop()!.replace('.json', '');
     return {
       id,
-      urlSlug: data.slug || id, // カスタムスラッグ優先、なければファイル名
+      urlSlug: data.slug || id,
       ...data,
+      tools: data.tools ?? [],
+      highlights: data.highlights ?? [],
+      images: data.images ?? [],
     };
   })
   .filter((w) => w.published !== false)

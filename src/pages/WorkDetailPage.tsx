@@ -111,7 +111,7 @@ export default function WorkDetailPage() {
 
               <InfoItem label="使用ツール">
                 <div className={styles.tags}>
-                  {work.tools.map((tool) => (
+                  {(work.tools ?? []).map((tool) => (
                     <span key={tool} className={styles.tag}>{tool}</span>
                   ))}
                 </div>
@@ -119,7 +119,7 @@ export default function WorkDetailPage() {
 
               <InfoItem label="工夫したポイント" last>
                 <ul className={styles.highlights}>
-                  {work.highlights.map((h, i) => (
+                  {(work.highlights ?? []).map((h, i) => (
                     <li key={i} className={styles.highlightItem}>
                       <span className={styles.highlightBullet} aria-hidden="true">✦</span>
                       {h}
@@ -132,7 +132,7 @@ export default function WorkDetailPage() {
         </div>
 
         {/* 追加画像（フル幅） */}
-        {work.images.length > 0 && (
+        {(work.images ?? []).length > 0 && (
           <motion.div
             className={styles.imagesSection}
             initial={{ opacity: 0, y: 20 }}
@@ -141,7 +141,7 @@ export default function WorkDetailPage() {
           >
             <h2 className={styles.sectionLabel}>制作画像</h2>
             <div className={styles.imageGrid}>
-              {work.images.map((img, i) => (
+              {(work.images ?? []).map((img, i) => (
                 <img key={i} src={pub(img.url)} alt={img.alt} className={styles.workImg} loading="lazy" />
               ))}
             </div>
