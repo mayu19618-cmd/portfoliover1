@@ -80,7 +80,8 @@ export default function WorkDetailPage() {
 
             {work.siteUrl && (
               <a href={work.siteUrl} target="_blank" rel="noopener noreferrer" className={styles.siteLink}>
-                公開サイトを見る →
+                公開サイトを見る
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
             )}
           </motion.div>
