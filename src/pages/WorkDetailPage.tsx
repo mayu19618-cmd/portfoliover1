@@ -14,8 +14,9 @@ export default function WorkDetailPage() {
   if (!work) {
     return (
       <div className={styles.notFound}>
-        <p>作品が見つかりませんでした。</p>
-        <Link to="/" className={styles.backLink}>← トップページへ戻る</Link>
+        <p className={styles.notFoundTitle}>404</p>
+        <p className={styles.notFoundMsg}>作品が見つかりませんでした。</p>
+        <Link to="/" className={styles.backLink}>← 作品一覧へ戻る</Link>
       </div>
     );
   }

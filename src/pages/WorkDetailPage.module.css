@@ -16,8 +16,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 16px;
+  background: var(--bg);
+  padding: 40px 20px;
+}
+
+.notFoundTitle {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: rgba(215, 130, 160, 0.3);
+  line-height: 1;
+}
+
+.notFoundMsg {
+  font-size: 0.95rem;
   color: var(--text-light);
+  letter-spacing: 0.06em;
 }
 
 /* ── 戻るボタン ── */
