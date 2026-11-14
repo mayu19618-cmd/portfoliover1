@@ -1,7 +1,7 @@
 {
   "color": "#cdedd2",
   "siteUrl": "",
-  "concept": "あ",
+  "concept": "「自分の可能性を探るきっかけに。」\n自然光を感じる温かみのあるビジュアルと、前向きな表情の人物を組み合わせ、才能が開花する瞬間を表現。\nビジネス系コンテンツでありながら堅苦しくなりすぎない、親しみやすく希望を感じられるデザインを意識しました。",
   "slug": "business-youtubethumbnail",
   "thumbnail": "/portfoliover1/images/works/アート.png",
   "published": true,
@@ -10,7 +10,7 @@
   "duration": "15分",
   "title": "ビジネス系Youtube-サムネイル",
   "images": [],
-  "overview": "20~40代ターゲットの架空のビジネス系Youtubeチャンネルのサムネイルを、\n",
+  "overview": "20~40代ターゲットの架空のビジネス系・自己啓発系Youtubeチャンネルのサムネイルを、作成しました。\n「才能の開花」をテーマに、視聴者の成長意欲や好奇心を刺激する、明るく前向きなデザインを目指しました。\n",
   "tools": [
     "Illustrator",
     "chatgpt(画像生成のみ)"
@@ -18,8 +18,11 @@
   "year": 2026,
   "thumbnailAlt": "架空のイラストレーターポートフォリオサイト",
   "category": "Graphic Design",
-  "purpose": "あ",
+  "purpose": "・自己成長やキャリアアップに関心のある視聴者の興味を引く\n・動画のテーマを瞬時に伝え、クリックにつなげる",
   "highlights": [
-    "あ"
+    "文字のジャンプ率",
+    "視線誘導",
+    "光を活かした印象設計",
+    "文字の立体感感情に訴えるビジュアル"
   ]
 }
