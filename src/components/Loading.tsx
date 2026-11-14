@@ -47,7 +47,7 @@ export default function Loading({ onComplete }: LoadingProps) {
           transition={{ duration: 0.6 }}
         >
           <div className={styles.bgDeco}>
-            {[...Array(6)].map((_, i) => (
+            {[...Array(3)].map((_, i) => (
               <div key={i} className={styles.bgCircle} style={{ '--i': i } as React.CSSProperties} />
             ))}
           </div>

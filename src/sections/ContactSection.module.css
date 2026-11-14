@@ -238,4 +238,5 @@
   .buttons { flex-direction: column; align-items: flex-start; }
   .btnPrimary { width: 100%; text-align: center; }
   .sns { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .bgDeco { display: none; }
 }

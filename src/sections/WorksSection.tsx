@@ -71,7 +71,7 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
           ))}
         </div>
 
-        <motion.div className={styles.grid} layout>
+        <div className={styles.grid}>
           <AnimatePresence mode="popLayout">
             {filtered.map((work, i) => (
               <motion.article
@@ -80,8 +80,8 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                layout
+                transition={{ duration: 0.3, delay: i * 0.03 }}
+                layout="position"
                 onClick={() => handleCardClick(work.id)}
                 tabIndex={0}
                 role="button"
@@ -106,7 +106,7 @@ export default function WorksSection({ onCarrotDrop }: WorksSectionProps) {
               </motion.article>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
 
         <p className={styles.worksNote}>
           ✦ 作品は一例です。今後たくさんの作品を追加予定です ✦

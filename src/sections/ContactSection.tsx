@@ -98,6 +98,7 @@ export default function ContactSection() {
               src={pub('/rabbit1.png')}
               alt=""
               width={80}
+              loading="lazy"
               style={{ display: 'block' }}
               aria-hidden="true"
             />

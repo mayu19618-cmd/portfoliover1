@@ -67,6 +67,7 @@ export default function WorkDetailPage() {
                   src={pub(work.thumbnail)}
                   alt={work.thumbnailAlt}
                   className={styles.mainImg}
+                  loading="lazy"
                 />
               ) : (
                 <div className={styles.visualPlaceholder}>
