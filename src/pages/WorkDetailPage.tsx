@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { works } from '../data/works';
 import styles from './WorkDetailPage.module.css';
@@ -8,7 +8,6 @@ import { formatText } from '../utils/formatText';
 
 export default function WorkDetailPage() {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const index = works.findIndex((w) => w.urlSlug === id || w.id === id);
   const work = works[index];
 
@@ -39,9 +38,9 @@ export default function WorkDetailPage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <button className={styles.backBtn} onClick={() => navigate(-1)} aria-label="前のページに戻る">
+          <Link to="/" className={styles.backBtn} aria-label="作品一覧へ戻る">
             ← 作品一覧へ戻る
-          </button>
+          </Link>
         </motion.div>
 
         {/* ヘッダー */}
