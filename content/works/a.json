@@ -19,5 +19,19 @@
   "purpose": "あ",
   "highlights": [
     "あ"
+  ],
+  "images": [
+    {
+      "url": "/portfoliover1/images/works/insta1_1.png",
+      "alt": "KYOTO GYOZA FESTIVAL インスタ投稿デザイン 1"
+    },
+    {
+      "url": "/portfoliover1/images/works/insta2_1.png",
+      "alt": "KYOTO GYOZA FESTIVAL インスタ投稿デザイン 2"
+    },
+    {
+      "url": "/portfoliover1/images/works/insta3_1.png",
+      "alt": "KYOTO GYOZA FESTIVAL インスタ投稿デザイン 3"
+    }
   ]
 }
