@@ -1,29 +1,25 @@
 {
-  "color": "#E8EAF6",
+  "color": "#cdedd2",
   "siteUrl": "",
-  "concept": "作品が主役になるよう余白を大胆に使い、ギャラリーとして見やすい構成を追求。",
+  "concept": "あ",
+  "slug": "business-youtubethumbnail",
   "thumbnail": "/portfoliover1/images/works/アート.png",
   "published": true,
   "order": 3,
-  "target": "イラスト依頼を検討している企業・個人クライアント",
-  "duration": "",
-  "title": "yume — イラストレーターポートフォリオ",
+  "target": "20〜40代の仕事を頑張りたい人",
+  "duration": "15分",
+  "title": "ビジネス系Youtube-サムネイル",
   "images": [],
-  "overview": "架空のイラストレーター向けポートフォリオサイト。作品の世界観を最大限に引き出すデザイン。",
+  "overview": "20~40代ターゲットの架空のビジネス系Youtubeチャンネルのサムネイルを、\n",
   "tools": [
-    "Figma",
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "WordPress"
+    "Illustrator",
+    "chatgpt(画像生成のみ)"
   ],
-  "year": 2023,
+  "year": 2026,
   "thumbnailAlt": "架空のイラストレーターポートフォリオサイト",
-  "category": "Web Design",
-  "purpose": "仕事依頼の増加と、イラストレーターとしてのブランド確立。",
+  "category": "Graphic Design",
+  "purpose": "あ",
   "highlights": [
-    "ホバー時に作品の雰囲気が伝わるマイクロインタラクション",
-    "CMS（WordPress）連携でイラストレーター自身が更新できる仕組み",
-    "ライトモード/ダークモード切り替え機能"
+    "あ"
   ]
 }
