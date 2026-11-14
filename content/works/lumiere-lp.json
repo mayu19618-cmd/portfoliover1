@@ -1,15 +1,15 @@
 {
   "color": "#d4f6f7",
   "siteUrl": "https://mayu19618-cmd.github.io/salon-lp/",
-  "concept": "あ",
+  "concept": "「自分に自信が持てる、長く通い続けられる美容サロン」\n\n上品さ・透明感・生き生きとした女性をキーワードに、日常から少し離れた特別なリラックス空間を表現。\nベージュやアイボリーを基調とした柔らかな配色に、爽やかなライトブルーを取り入れ、洗練された女性らしさを演出しました。",
   "slug": "lumiere-lp",
   "thumbnail": "/portfoliover1/images/works/lp1_１-1.png",
   "published": true,
   "order": 1,
-  "target": "自分に投資することのできる30~50代女性",
+  "target": "美容に投資することのできる30~50代女性",
   "duration": "ブランド設計5時間、デザイン5時間（合計10時間）",
   "title": "Lumiere-LP(PC版)",
-  "overview": "Lumiereという架空のエステサロンのLPを作りました。",
+  "overview": "30~50代女性ターゲットのLumiereという架空のエステサロンのLPを、\nサロンのイメージカラーであるライトブルーを基調としながらサロンの上質さや安心感を視覚的に伝えるデザインで制作しました。\n",
   "tools": [
     "figma",
     "Illustrator",
@@ -19,8 +19,10 @@
   "year": 2026,
   "thumbnailAlt": "LumiereのLPデザイン",
   "category": "Web Design",
-  "purpose": "あ",
+  "purpose": "・サロンの認知拡大と新規顧客の獲得\n・初めて利用する方の不安を軽減し、安心感と信頼感を伝える\n・サロンの魅力や施術内容をわかりやすく伝え、LINE予約へ誘導",
   "highlights": [
-    "あ"
+    "ターゲットを意識した配色設計視線の流れを意識した情報設計",
+    "予約につながる導線設計",
+    "写真を活かした世界観の統一ユーザーの不安を解消するコンテンツ設計"
   ]
 }
