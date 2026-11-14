@@ -1,25 +1,13 @@
 {
   "color": "#f8e0ca",
-  "concept": "あ",
+  "concept": "「思わず行きたくなる、餃子のワクワク感。」\n焼きたての餃子をイメージした温かみのあるオレンジを基調に、食欲を刺激する親しみやすいデザインを目指しました。\n装飾を抑えたシンプルなレイアウトに餃子のビジュアルをアクセントとして取り入れ、楽しさと情報の読みやすさを両立させています。",
   "slug": "gyozafes-instagram",
   "thumbnail": "/portfoliover1/images/works/insta1_1.png",
   "published": true,
   "order": 2,
-  "target": "あ",
+  "target": "京都・関西圏に住む10〜40代の男女。グルメイベントや食べ歩きに関心があり、友人・恋人・家族との休日のお出かけ先を探している人。",
   "duration": "コンセプト設計1時間、デザイン3時間(合計 4時間)",
   "title": "KYOTO GYOZA FESTIVAL-インスタフィード投稿",
-  "overview": "あ",
-  "tools": [
-    "Illustrator",
-    "chatgpt(画像生成時のみ)"
-  ],
-  "year": 2026,
-  "thumbnailAlt": "KYOTO GYOZA FESTIVALのインスタフード投稿デザイン",
-  "category": "Other Works",
-  "purpose": "あ",
-  "highlights": [
-    "あ"
-  ],
   "images": [
     {
       "url": "/portfoliover1/images/works/insta1_1.png",
@@ -33,5 +21,21 @@
       "url": "/portfoliover1/images/works/insta3_1.png",
       "alt": "KYOTO GYOZA FESTIVAL インスタ投稿デザイン 3"
     }
+  ],
+  "overview": "京都で開催される架空のグルメイベント「KYOTO GYOZA FESTIVAL」のInstagramフィード投稿を3枚制作しました。\nイベントの認知拡大と来場促進を目的に、開催概要やイベントの魅力をわかりやすく伝える投稿を企画・デザインしました。",
+  "tools": [
+    "Illustrator",
+    "chatgpt(画像生成時のみ)"
+  ],
+  "year": 2026,
+  "thumbnailAlt": "KYOTO GYOZA FESTIVALのインスタフード投稿デザイン",
+  "category": "Other Works",
+  "purpose": "・イベントの認知拡大と来場意欲の向上\n・開催日時・場所・入場条件などの情報をわかりやすく伝える\n・投稿の保存やシェアを促し、イベント情報の拡散につなげる",
+  "highlights": [
+    "視認性を意識した文字設計",
+    "配色による世界観の統一",
+    "余白を活かしたレイアウト",
+    "遊び心のある装飾",
+    "保存を意識した情報整理"
   ]
 }
