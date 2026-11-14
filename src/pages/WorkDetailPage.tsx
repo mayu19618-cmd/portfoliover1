@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { works } from '../data/works';
@@ -14,6 +14,10 @@ export default function WorkDetailPage() {
   const [selectedImg, setSelectedImg] = useState<string | null>(
     work?.thumbnail ?? work?.images?.[0]?.url ?? null
   );
+
+  useEffect(() => {
+    setSelectedImg(work?.thumbnail ?? work?.images?.[0]?.url ?? null);
+  }, [id]);
 
   if (!work) {
     return (
