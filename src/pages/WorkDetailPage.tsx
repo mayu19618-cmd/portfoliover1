@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { works } from '../data/works';
@@ -10,6 +11,10 @@ export default function WorkDetailPage() {
   const navigate = useNavigate();
   const index = works.findIndex((w) => w.urlSlug === id || w.id === id);
   const work = works[index];
+
+  const [selectedImg, setSelectedImg] = useState<string | null>(
+    work?.thumbnail ?? work?.images?.[0]?.url ?? null
+  );
 
   if (!work) {
     return (
@@ -61,10 +66,10 @@ export default function WorkDetailPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div className={styles.imgCard} style={!work.thumbnail ? { background: work.color } : undefined}>
-              {work.thumbnail ? (
+            <div className={styles.imgCard} style={!selectedImg ? { background: work.color } : undefined}>
+              {selectedImg ? (
                 <img
-                  src={pub(work.thumbnail)}
+                  src={pub(selectedImg)}
                   alt={work.thumbnailAlt}
                   className={styles.mainImg}
                   loading="lazy"
@@ -78,6 +83,21 @@ export default function WorkDetailPage() {
                 </div>
               )}
             </div>
+
+            {(work.images ?? []).length > 0 && (
+              <div className={styles.thumbStrip}>
+                {(work.images ?? []).map((img, i) => (
+                  <button
+                    key={i}
+                    className={`${styles.thumb} ${selectedImg === img.url ? styles.thumbActive : ''}`}
+                    onClick={() => setSelectedImg(img.url)}
+                    aria-label={img.alt}
+                  >
+                    <img src={pub(img.url)} alt={img.alt} />
+                  </button>
+                ))}
+              </div>
+            )}
 
             {work.siteUrl && (
               <a href={work.siteUrl} target="_blank" rel="noopener noreferrer" className={styles.siteLink}>
@@ -132,23 +152,6 @@ export default function WorkDetailPage() {
             </div>
           </motion.div>
         </div>
-
-        {/* 追加画像（フル幅） */}
-        {(work.images ?? []).length > 0 && (
-          <motion.div
-            className={styles.imagesSection}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <h2 className={styles.sectionLabel}>制作画像</h2>
-            <div className={styles.imageGrid}>
-              {(work.images ?? []).map((img, i) => (
-                <img key={i} src={pub(img.url)} alt={img.alt} className={styles.workImg} loading="lazy" />
-              ))}
-            </div>
-          </motion.div>
-        )}
 
         {/* 前後ナビ */}
         <nav className={styles.pagination} aria-label="前後の作品">

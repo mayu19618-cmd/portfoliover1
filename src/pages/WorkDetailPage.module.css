@@ -161,6 +161,39 @@
   transform: translateY(-2px);
 }
 
+/* ── サムネイルストリップ ── */
+.thumbStrip {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.thumb {
+  width: calc((100% - 24px) / 4);
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  transition: border-color 0.2s, opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb:hover { opacity: 0.8; }
+
+.thumbActive {
+  border-color: #D782A0;
+}
+
 /* ── 右カラム ── */
 .rightCol {}
 
